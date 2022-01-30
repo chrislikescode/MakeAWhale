@@ -1,0 +1,328 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+
+button {
+  margin: 5px;
+}
+
+
+
+/* General Styles */
+
+h1, h2, h3, li{
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  color: white;
+
+}
+
+body{ 
+  background: hsla(262, 76%, 6%, 1);  /* fallback for old browsers */
+  background: radial-gradient(circle, hsla(262, 76%, 6%, 1) 0%, rgb(15, 31, 44) 100%) ;/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -moz-radial-gradient(circle, hsla(262, 76%, 6%, 1) 0%, rgb(15, 31, 44) 100%) ;
+  background: -webkit-radial-gradient(circle, hsla(262, 76%, 6%, 1) 0%, rgb(15, 31, 44) 100%) ;
+
+  vertical-align: middle;
+
+  font-family: 'Lato', sans-serif;
+
+  padding: 25px;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+
+/* General Styles */
+.flex {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+
+.text_white {
+  color: white;
+}
+
+.small_text {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.med_text {
+  font-size: 2rem;
+}
+
+.big_text {
+  font-size: 4rem;
+}
+
+.big_big_text {
+  font-size: 8rem;
+}
+
+.MainHeader {
+  margin-top: 25px;
+  margin-bottom: 80px;
+  text-align: left;
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 4px;
+  word-spacing: -8px;
+  color: #6825E6;
+  text-shadow: 
+    -1px -1px 0 #280A5E,
+    -2px -2px 0 #280A5E,
+    -3px -3px 0 #280A5E,
+    -4px -4px 0 #280A5E,
+    -5px -5px 0 #280A5E,
+    -6px -6px 0 #280A5E,
+    -7px -7px 0 #280A5E,
+    -8px -8px 0 #280A5E
+}
+
+
+/* Lottery Timer */
+
+#LotteryContainer {
+  background-color: #3D334F;
+  padding: 10px;
+  border-radius: 20px;
+  margin-bottom: 100px;
+  text-align: center;
+
+}
+
+
+#LotteryLight {
+  border-radius: 100px;
+  width: 10px;
+  height: 10px;
+}
+
+.on {
+  background-color: #26E07A;
+  box-shadow: 0px 0px 5px 0px #26E07A;
+
+} .on::after {
+  color: #26E07A;
+  content: "on";
+  left: 15px;
+  top: -6px;
+  position: relative; 
+}
+
+.off {
+  background-color: red;
+  box-shadow: 0px 0px 5px 0px red;
+}.off::after {
+  color: red;
+  content: "off";
+  left: 15px;
+  top: -6px;
+  position: relative; 
+}
+
+#LotteryTimer {
+  width: 100%;
+  justify-content: center;
+}
+
+#LotteryTimerHeader {
+  width: 100%;
+  background-color: rgb(15, 31, 44);
+  padding: 20px;
+  padding-bottom: 30px;
+  border-radius: 20px;
+
+}
+
+
+/* Lottery Stats */
+#LotteryStats {
+  justify-content: center;
+}
+
+#LotteryStatsHeader {
+  width: 100%;
+  background-color: rgb(15, 31, 44);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+/* Enter Lottery Button */
+#EnterLottery {
+  justify-content: center;
+
+}
+
+#EnterButton {
+  font-size: 1rem;
+  border-radius: 20px;
+  margin: 10px 0 10px 0;
+  padding: 15px;
+  background-color: #6825E6;
+  border: none;
+  width: 100%;
+  color: white;
+  transition: all ease .5;
+}
+
+#EnterButton:hover {
+  color: #26E07A;
+}
+
+/* Meta Mask BUttom */
+#MetaMaskButton {
+  font-size: 1rem;
+  border-radius: 20px;
+  margin: 10px 0 10px 0;
+  padding: 15px;
+  background-color: #c9c9c9;
+  border: none;
+  width: 100%;
+  color: black;
+  transition: all ease .5;
+}
+
+.hide { 
+  display: none !important;
+}
+
+/* Vault BUttons */
+.vaultbutton {
+  font-size: 1rem;
+  padding: 15px;
+  background-color: #6825E6;
+  border: none;
+  color: white;
+  transition: all ease .5;
+  width: 50%;
+}
+
+#CheckVaultButton {
+  font-size: 1rem;
+  border-radius: 20px;
+  margin: 10px 10px 10px 0;
+  padding: 15px;
+  background-color: #6825E6;
+  border: none;
+  color: white;
+  transition: all ease .5;
+}
+
+#WithdrawWinnings {
+  font-size: 1rem;
+  border-radius: 20px;
+  margin: 10px 0 10px 10px;
+  padding: 15px;
+  background-color: #6825E6;
+  border: none;
+  color: white;
+  transition: all ease .5;
+}
+
+
+/* Last Winner */
+#LastWinnerContainer{
+  width: 100%;
+  justify-content: center;
+}
+
+#LastWinner {
+  width: 100%;
+  background-color: rgb(15, 31, 44);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+
+/* Entrants Table */
+
+.EntrantsTableContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+}
+
+.EntrantsTable {
+  width: 100%;
+
+}
+
+tr:nth-child(even){
+  background-color: rgb(15, 31, 44);
+  color: white;
+}
+
+tr {
+  background-color: rgb(15, 31, 44);
+  color: white;
+}
+
+td, th {
+  padding: 8px;
+} 
+
+
+/* Winner modal box */
+.winner-modal-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  background-color: #3D334F;
+  border: 2px solid #000;
+  box-shadow: 24;
+  padding: 50px;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+
+}
+
+
+
+/* How To Info */
+
+ol{
+  padding: 10px;
+}
+li {
+  color: white;
+  margin: 20px;
+  font-size: 1rem;
+}
