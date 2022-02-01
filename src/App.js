@@ -13,6 +13,7 @@ import Header from "./components/Header.js";
 import Lottery from "./components/Lottery.js";
 import EntrantsTable from "./components/EntrantsTable.js";
 import HowTo from "./components/HowTo";
+import NoWeb3 from "./components/NoWeb3";
 
 import Grid from '@mui/material/Grid/';
 
@@ -106,7 +107,9 @@ class App extends Component {
 
   render() {
     if (!this.state.web3) {
-      return <div>Loading Web3, accounts, and contract...</div>;
+      return (
+        <NoWeb3/>
+      );
     }
     return (
       <div>
