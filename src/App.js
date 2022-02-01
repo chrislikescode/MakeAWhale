@@ -71,17 +71,22 @@ class App extends Component {
   // I'm not exactly sure why 2? ...
   postStateCallback = async () => {
     console.log("componentDidMount set state callback ")
-
+     let _runninglot;
     // check if lottery is running
-    const _runninglot = await this.state.lottery.methods.lotteryRunning().call();
-    console.log("_runninglot " + _runninglot);
-    console.log("**********");
+    try{
+      _runninglot = await this.state.lottery.methods.lotteryRunning().call();
+      console.log("_runninglot " + _runninglot);
+      console.log("**********");
+    }catch(err){
+      console.error(err);
+    }
+ 
 
     if(this.state.accounts.length > 0){
       console.log(" state accounts length is greater than 0")
       // try to get accounts - if not connected this will be an array length 0  
       const _accounts = await this.state.web3.eth.getAccounts(); 
-      if(_accounts.length == 0){
+      if(_accounts.length === 0){
         console.log("Account in Storage but Not Connected -- clear storage");
         localStorage.removeItem('accounts');
         localStorage.removeItem('mm');
