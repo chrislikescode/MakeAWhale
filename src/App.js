@@ -43,14 +43,18 @@ class App extends Component {
         console.log(_web3);
         console.log("**********");
 
-        const networkId = await _web3.eth.net.getId();
-        const lotterynetwork = LotteryContract.networks[networkId];
-        const _lottery = new _web3.eth.Contract( LotteryContract.abi, lotterynetwork.address);
-        const lotteryvaultnetwork = LotteryVault.networks[networkId];
-        const _lotteryvault = new _web3.eth.Contract( LotteryVault.abi, lotteryvaultnetwork.address);
-        // check if lottery is running
-        const _runninglot = await _lottery.methods.lotteryRunning().call();
-        
+        try {
+          const networkId = await _web3.eth.net.getId();
+          const lotterynetwork = LotteryContract.networks[networkId];
+          const _lottery = new _web3.eth.Contract( LotteryContract.abi, lotterynetwork.address);
+          const lotteryvaultnetwork = LotteryVault.networks[networkId];
+          const _lotteryvault = new _web3.eth.Contract( LotteryVault.abi, lotteryvaultnetwork.address);
+          
+          // check if lottery is running
+          const _runninglot = await _lottery.methods.lotteryRunning().call();
+        }  catch(err){
+            console.error(err);
+        }
       
         // set state
         this.setState({ 
