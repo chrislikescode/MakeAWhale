@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Grid from '@mui/material/Grid/';
 import Button from '@mui/material/Button';
 
+import Header from './Header';
 
 
 export class NoWeb3 extends Component {
