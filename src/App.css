@@ -326,3 +326,8 @@ li {
   margin: 20px;
   font-size: 1rem;
 }
+
+/* No Web3 Components */
+#NoWeb3Grid {
+  flex-direction: row;
+}
