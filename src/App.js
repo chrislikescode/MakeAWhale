@@ -71,16 +71,18 @@ class App extends Component {
   // I'm not exactly sure why 2? ...
   postStateCallback = async () => {
     console.log("componentDidMount set state callback ")
-     let _runninglot;
+    let _runninglot;
     // check if lottery is running
+    console.log(this.state.lottery.methods);
+    
     try{
-      _runninglot = await this.state.lottery.methods.lotteryRunning().call();
-      console.log("_runninglot " + _runninglot);
-      console.log("**********");
-    }catch(err){
-      console.error(err);
+    _runninglot = await this.state.lottery.methods.lotteryRunning().call();
+    } catch(err){
+    console.error(err);
     }
- 
+    
+    console.log("_runninglot " + _runninglot);
+    console.log("**********");
 
     if(this.state.accounts.length > 0){
       console.log(" state accounts length is greater than 0")
