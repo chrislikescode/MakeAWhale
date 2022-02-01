@@ -328,6 +328,20 @@ li {
 }
 
 /* No Web3 Components */
-#NoWeb3Grid {
-  flex-direction: row;
+#NoWeb3Div {
+  flex-direction: column;
+  width: 100%;
+  background-color: rgb(15, 31, 44);
+  padding: 20px;
+  padding-bottom: 20px;
+  padding-bottom: 30px;
+  border-radius: 20px;
+}
+
+#NoWeb3Item {
+  background-color: #3D334F;
+  padding: 10px;
+  border-radius: 20px;
+  margin-bottom: 100px;
+  text-align: center;
 }
