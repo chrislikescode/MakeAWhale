@@ -107,7 +107,8 @@ class App extends Component {
 
   render() {
     const web3State = this.state.web3;
-    
+    console.log(web3State);
+
     if(!web3State) {
       return <NoWeb3/>;
     } else {
