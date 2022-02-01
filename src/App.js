@@ -54,7 +54,7 @@ class App extends Component {
       console.log("_lotteryvault " + _lotteryvault);
 
       // check if lottery is running
-      const _runninglot = await _lottery.methods.lotteryRunning().call();
+      //const _runninglot = await _lottery.methods.lotteryRunning().call();
       console.log("_runninglot " + _runninglot);
       console.log("**********");
 
