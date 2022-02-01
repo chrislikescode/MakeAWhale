@@ -55,15 +55,15 @@ class App extends Component {
 
       // check if lottery is running
       //const _runninglot = await _lottery.methods.lotteryRunning().call();
-      console.log("_runninglot " + _runninglot);
-      console.log("**********");
+      //console.log("_runninglot " + _runninglot);
+      //console.log("**********");
 
       // set state
       this.setState({ 
         web3: _web3, 
         lottery: _lottery, 
         lotteryvault: _lotteryvault,
-        lotteryRunning: _runninglot
+       // lotteryRunning: _runninglot
         }, this.postStateCallback);  
     } else {
       console.log("No web3 available, need to install MM");
