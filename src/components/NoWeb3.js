@@ -3,11 +3,16 @@ import Grid from '@mui/material/Grid/';
 import Button from '@mui/material/Button';
 
 
-downloadMetamask = async () => {
-    window.open('https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en');
-}
 
 export class NoWeb3 extends Component {
+
+
+    downloadMetamask = async () => {
+        window.open('https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en');
+    }
+
+
+
   render() {
     return (
         <div>
