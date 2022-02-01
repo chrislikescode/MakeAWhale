@@ -53,17 +53,11 @@ class App extends Component {
       const _lotteryvault = new _web3.eth.Contract( LotteryVault.abi, lotteryvaultnetwork.address);
       console.log("_lotteryvault " + _lotteryvault);
 
-      // check if lottery is running
-      //const _runninglot = await _lottery.methods.lotteryRunning().call();
-      //console.log("_runninglot " + _runninglot);
-      //console.log("**********");
-
       // set state
       this.setState({ 
         web3: _web3, 
         lottery: _lottery, 
         lotteryvault: _lotteryvault,
-       // lotteryRunning: _runninglot
         }, this.postStateCallback);  
     } else {
       console.log("No web3 available, need to install MM");
@@ -77,6 +71,12 @@ class App extends Component {
   // I'm not exactly sure why 2? ...
   postStateCallback = async () => {
     console.log("componentDidMount set state callback ")
+
+    // check if lottery is running
+    const _runninglot = await _lottery.methods.lotteryRunning().call();
+    console.log("_runninglot " + _runninglot);
+    console.log("**********");
+
     if(this.state.accounts.length > 0){
       console.log(" state accounts length is greater than 0")
       // try to get accounts - if not connected this will be an array length 0  
@@ -88,6 +88,8 @@ class App extends Component {
         this.setState({accounts: 0, mmConnected: 0});
       }
     }
+
+    this.setState({lotteryRunning: _runninglot});
   }
  
   /* Helper Methods for Accessing Local Storage */
