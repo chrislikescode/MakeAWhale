@@ -330,7 +330,6 @@ li {
 /* No Web3 Components */
 #NoWeb3Div {
   flex-direction: column;
-  width: 100%;
   background-color: rgb(15, 31, 44);
   padding: 20px;
   padding-bottom: 20px;
