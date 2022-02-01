@@ -106,36 +106,40 @@ class App extends Component {
 
 
   render() {
-    if (!this.state.web3) {
-      return (
-        <NoWeb3/>
-      );
-    }
+    const AppView = () => {
+      if(!this.state.web3) {
+        return <NoWeb3/>
+      } else {
+        return (
+          <div>
+            <Header/>
+            <Grid container spacing={2} direction="row-reverse">
+            
+              <EntrantsTable 
+              lottery={this.state.lottery}
+               web3={this.state.web3}
+                lotteryRunning={this.state.lotteryRunning}
+                />
+            
+              <Lottery
+               lottery={this.state.lottery} 
+               web3={this.state.web3} 
+               lotteryRunning={this.state.lotteryRunning}
+               mmConnected={this.state.mmConnected}
+               lotteryvault={this.state.lotteryvault}
+               />
+             
+              <Grid item xs={12} md={3}>
+                <HowTo/>
+              </Grid>
+            </Grid>
+    
+          </div>
+        );
+      }
+    } 
     return (
-      <div>
-        <Header/>
-        <Grid container spacing={2} direction="row-reverse">
-        
-          <EntrantsTable 
-          lottery={this.state.lottery}
-           web3={this.state.web3}
-            lotteryRunning={this.state.lotteryRunning}
-            />
-        
-          <Lottery
-           lottery={this.state.lottery} 
-           web3={this.state.web3} 
-           lotteryRunning={this.state.lotteryRunning}
-           mmConnected={this.state.mmConnected}
-           lotteryvault={this.state.lotteryvault}
-           />
-         
-          <Grid item xs={12} md={3}>
-            <HowTo/>
-          </Grid>
-        </Grid>
-
-      </div>
+      {AppView()}
     )};
 
 
