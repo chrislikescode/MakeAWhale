@@ -33,25 +33,30 @@ class App extends Component {
 
   componentDidMount = async () => {
     try{ 
+
       // Get network provider and web3 instance of Lottery and LotteryVault.
       const _web3 = await getWeb3();
-      const networkId = await _web3.eth.net.getId();
-      const lotterynetwork = LotteryContract.networks[networkId];
-      const _lottery = new _web3.eth.Contract( LotteryContract.abi, lotterynetwork.address);
-
-      const lotteryvaultnetwork = LotteryVault.networks[networkId];
-      const _lotteryvault = new _web3.eth.Contract( LotteryVault.abi, lotteryvaultnetwork.address);
-      // check if lottery is running
-      const runninglot = await _lottery.methods.lotteryRunning().call();
-      
-      // set state
-      this.setState({ 
-        web3: _web3, 
-        lottery: _lottery, 
-        lotteryvault: _lotteryvault,
-        lotteryRunning: runninglot
-        }, this.postStateCallback);
-
+      if(_web3){
+        const networkId = await _web3.eth.net.getId();
+        const lotterynetwork = LotteryContract.networks[networkId];
+        const _lottery = new _web3.eth.Contract( LotteryContract.abi, lotterynetwork.address);
+  
+        const lotteryvaultnetwork = LotteryVault.networks[networkId];
+        const _lotteryvault = new _web3.eth.Contract( LotteryVault.abi, lotteryvaultnetwork.address);
+        // check if lottery is running
+        const runninglot = await _lottery.methods.lotteryRunning().call();
+        
+        // set state
+        this.setState({ 
+          web3: _web3, 
+          lottery: _lottery, 
+          lotteryvault: _lotteryvault,
+          lotteryRunning: runninglot
+          }, this.postStateCallback);  
+      } else {
+        console.log("No web3 available, need to install MM");
+      }
+     
 
 
     } catch(err){
