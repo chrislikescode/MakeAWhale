@@ -33,42 +33,42 @@ class App extends Component {
   }
 
   componentDidMount = async () => {
-    try{ 
 
-      // Get network provider and web3 instance of Lottery and LotteryVault.
-      const _web3 = await getWeb3();
+    // Get network provider and web3 instance of Lottery and LotteryVault.
+    const _web3 = await getWeb3();
 
-      if(_web3){
-        console.log("componentDidMount if -> web3 not null");
-        console.log(_web3);
-        console.log("**********");
-
-        try {
-          const networkId = await _web3.eth.net.getId();
-          const lotterynetwork = LotteryContract.networks[networkId];
-          const _lottery = new _web3.eth.Contract( LotteryContract.abi, lotterynetwork.address);
-          const lotteryvaultnetwork = LotteryVault.networks[networkId];
-          const _lotteryvault = new _web3.eth.Contract( LotteryVault.abi, lotteryvaultnetwork.address);
-          
-          // check if lottery is running
-          const _runninglot = await _lottery.methods.lotteryRunning().call();
-        }  catch(err){
-            console.error(err);
-        }
+    if(_web3){
+      console.log("componentDidMount if -> web3 not null");
+      console.log(_web3);
+      console.log("**********");
       
-        // set state
-        this.setState({ 
-          web3: _web3, 
-          lottery: _lottery, 
-          lotteryvault: _lotteryvault,
-          lotteryRunning: _runninglot
-          }, this.postStateCallback);  
-      } else {
-        console.log("No web3 available, need to install MM");
-      }
-    } catch(err){
-      console.error(err);
+      const networkId = await _web3.eth.net.getId();
+      console.log("networkid " + networkId);
+      const lotterynetwork = LotteryContract.networks[networkId];
+      console.log("lotterynetwork " + lotterynetwork);
+      const _lottery = new _web3.eth.Contract( LotteryContract.abi, lotterynetwork.address);
+      console.log("_lottery " + _lottery);      
+      const lotteryvaultnetwork = LotteryVault.networks[networkId];
+      console.log("lotteryvaultnetwork " + lotteryvaultnetwork);
+      const _lotteryvault = new _web3.eth.Contract( LotteryVault.abi, lotteryvaultnetwork.address);
+      console.log("_lotteryvault " + _lotteryvault);
+
+      // check if lottery is running
+      const _runninglot = await _lottery.methods.lotteryRunning().call();
+      console.log("_runninglot " + _runninglot);
+      console.log("**********");
+
+      // set state
+      this.setState({ 
+        web3: _web3, 
+        lottery: _lottery, 
+        lotteryvault: _lotteryvault,
+        lotteryRunning: _runninglot
+        }, this.postStateCallback);  
+    } else {
+      console.log("No web3 available, need to install MM");
     }
+ 
   };
 
   // handle situation where metamask disconnects but accounts and mm are still saved in local storage 
