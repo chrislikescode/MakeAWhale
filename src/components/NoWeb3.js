@@ -20,7 +20,6 @@ export class NoWeb3 extends Component {
             <Header/>
             <Grid container spacing={2} direction="row-reverse">
                 <Grid item xs={12} sm={12} md={3}>
-                    <HowTo/>
                 </Grid>
                 <Grid item id="NoWeb3Item" xs={12} sm={12} md={6}>
                     <div id="NoWeb3Div" className="flex"> 
@@ -30,6 +29,7 @@ export class NoWeb3 extends Component {
                     </div>
                 </Grid>
                 <Grid item xs={12} sm={12} md={3}>
+                 <HowTo/>
                 </Grid>
             </Grid>
         </div>
