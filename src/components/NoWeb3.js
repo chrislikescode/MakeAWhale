@@ -3,7 +3,7 @@ import Grid from '@mui/material/Grid/';
 import Button from '@mui/material/Button';
 
 import Header from './Header';
-
+import HowTo from './HowTo';
 
 export class NoWeb3 extends Component {
 
@@ -20,6 +20,7 @@ export class NoWeb3 extends Component {
             <Header/>
             <Grid container spacing={2} direction="row-reverse">
                 <Grid item xs={12} sm={12} md={3}>
+                    <HowTo/>
                 </Grid>
                 <Grid item id="NoWeb3Item" xs={12} sm={12} md={6}>
                     <div id="NoWeb3Div" className="flex"> 
