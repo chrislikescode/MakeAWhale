@@ -107,42 +107,37 @@ class App extends Component {
 
   render() {
     const web3State = this.state.web3;
-    let AppScreen;
-
+    
     if(!web3State) {
-      AppScreen = <NoWeb3/>
+      return <NoWeb3/>;
     } else {
-      AppScreen =  <div>
-      <Header/>
-      <Grid container spacing={2} direction="row-reverse">
-      
-        <EntrantsTable 
-        lottery={this.state.lottery}
-         web3={this.state.web3}
+      return (
+      <div>
+        <Header/>
+        <Grid container spacing={2} direction="row-reverse">
+        
+          <EntrantsTable 
+          lottery={this.state.lottery}
+          web3={this.state.web3}
+            lotteryRunning={this.state.lotteryRunning}
+            />
+        
+          <Lottery
+          lottery={this.state.lottery} 
+          web3={this.state.web3} 
           lotteryRunning={this.state.lotteryRunning}
+          mmConnected={this.state.mmConnected}
+          lotteryvault={this.state.lotteryvault}
           />
-      
-        <Lottery
-         lottery={this.state.lottery} 
-         web3={this.state.web3} 
-         lotteryRunning={this.state.lotteryRunning}
-         mmConnected={this.state.mmConnected}
-         lotteryvault={this.state.lotteryvault}
-         />
-       
-        <Grid item xs={12} md={3}>
-          <HowTo/>
+        
+          <Grid item xs={12} md={3}>
+            <HowTo/>
+          </Grid>
         </Grid>
-      </Grid>
-
-    </div>
+      </div>
+      )
     }
-
-    return (
-      {AppScreen}
-    )};
-
-
+  };
 }
 
 export default App;
