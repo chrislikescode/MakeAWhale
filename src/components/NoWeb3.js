@@ -9,7 +9,7 @@ export class NoWeb3 extends Component {
 
 
     downloadMetamask = async () => {
-        window.open('https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en');
+        window.open('https://metamask.io/');
     }
 
 
@@ -23,8 +23,8 @@ export class NoWeb3 extends Component {
                 </Grid>
                 <Grid item id="NoWeb3Item" xs={12} sm={12} md={6}>
                     <div id="NoWeb3Div" className="flex"> 
-                        <h2 className="text_white big_text">Welcome to the Crypto Lottery! 🐋  </h2> 
-                        <h2 className="text_white med_text">You will need a web3 enabled browser to use this app! Our recomendation, install the MetaMask extension.</h2> 
+                        <h2 className="text_white big_text noweb3_text">Welcome to the Crypto Lottery! 🐋  </h2> 
+                        <h2 className="text_white med_text noweb3_text">You will need a web3 enabled browser to use this app! Our recomendation, install the MetaMask extension.</h2> 
                         <Button variant="contained" id="MetaMaskDownload" onClick={this.downloadMetamask}>Download MetaMask</Button>
                     </div>
                 </Grid>

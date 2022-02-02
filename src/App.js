@@ -53,11 +53,18 @@ class App extends Component {
       const _lotteryvault = new _web3.eth.Contract( LotteryVault.abi, lotteryvaultnetwork.address);
       console.log("_lotteryvault " + _lotteryvault);
 
+
+      // can only check if lottery is running if we have an account to call the method from
+      // SO, first we chek if we are. if we are, we check, if not, we assume the lottery is not running.. ( maybe a better way to handle this )
+      const mm_logged = _web3.eth.getAccounts();
+      const _runninglot = mm_logged.length > 0  ? 0 : await _lottery.methods.lotteryRunning().call();
+
       // set state
       this.setState({ 
         web3: _web3, 
         lottery: _lottery, 
         lotteryvault: _lotteryvault,
+        lotteryRunning: _runninglot
         }, this.postStateCallback);  
     } else {
       console.log("No web3 available, need to install MM");
@@ -71,19 +78,7 @@ class App extends Component {
   // I'm not exactly sure why 2? ...
   postStateCallback = async () => {
     console.log("componentDidMount set state callback ")
-    let _runninglot;
-    // check if lottery is running
-    console.log(this.state.lottery.methods);
-    
-    try{
-    _runninglot = await this.state.lottery.methods.lotteryRunning().call();
-    } catch(err){
-    console.error(err);
-    }
-    
-    console.log("_runninglot " + _runninglot);
-    console.log("**********");
-
+  
     if(this.state.accounts.length > 0){
       console.log(" state accounts length is greater than 0")
       // try to get accounts - if not connected this will be an array length 0  
@@ -96,7 +91,6 @@ class App extends Component {
       }
     }
 
-    this.setState({lotteryRunning: _runninglot});
   }
  
   /* Helper Methods for Accessing Local Storage */

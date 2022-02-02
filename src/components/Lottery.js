@@ -18,6 +18,12 @@ class Lottery extends Component {
         this.lotteryRunning = this.props.lotteryRunning;
         this.mmConnected = this.props.mmConnected;
     }
+
+    componentDidUpdate(prevProps){
+        if(prevProps.lotteryRunning != this.props.lotteryRunning){
+            this.lotteryRunning = this.props.lotteryRunning;
+        }
+    }
     
     render() {
         return( 
