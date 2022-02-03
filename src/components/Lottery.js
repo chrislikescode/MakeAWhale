@@ -20,7 +20,7 @@ class Lottery extends Component {
     }
 
     componentDidUpdate(prevProps){
-        if(prevProps.lotteryRunning != this.props.lotteryRunning){
+        if(prevProps.lotteryRunning !== this.props.lotteryRunning){
             this.lotteryRunning = this.props.lotteryRunning;
         }
     }
@@ -32,7 +32,7 @@ class Lottery extends Component {
                 <Pot lottery={this.lottery} web3={this.web3} lotteryRunning={this.lotteryRunning}></Pot>
                 <LastWinner lottery={this.lottery} web3={this.web3} lotteryRunning={this.lotteryRunning}></LastWinner>
                 <EnterLottery lottery={this.lottery} web3={this.web3} lotteryRunning={this.lotteryRunning}></EnterLottery>
-                <VaultButtons lotteryvault={this.lotteryvault} web3={this.web3}></VaultButtons>
+                <VaultButtons lotteryvault={this.lotteryvault} web3={this.web3} lotteryrunning={this.lotteryrunning}></VaultButtons>
                 <ConnectMetaMask web3={this.web3} mmConnected={this.mmConnected}></ConnectMetaMask>
             </Grid>
             

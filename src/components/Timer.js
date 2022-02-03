@@ -111,7 +111,7 @@ class Timer extends Component {
                 <div id="LotteryTimerHeader">
                     <div id="LotteryLight" className={this.state.lightClass}></div>
                     <h2 className="text_white med_text">blocks left</h2> 
-                    <h2 className="text_white big_big_text"> {this.lotteryRunning ? this.state.lotteryBlocksLeft : this.state.emoji } </h2> 
+                    <h2 className="text_white big_big_text"> <span>{this.lotteryRunning ? this.state.lotteryBlocksLeft :  this.state.emoji} </span> </h2> 
                     <h3 className="text_white small_text">{this.state.statusMessage}  {this.lotteryRunning ? this.state.lotteryEndBlock : "" }</h3> 
                     <h3 className="text_white small_text">Current block: {this.state.currentBlock} </h3> 
                 </div>

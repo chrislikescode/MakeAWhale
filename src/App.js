@@ -37,21 +37,12 @@ class App extends Component {
     // Get network provider and web3 instance of Lottery and LotteryVault.
     const _web3 = await getWeb3();
 
-    if(_web3){
-      console.log("componentDidMount if -> web3 not null");
-      console.log(_web3);
-      console.log("**********");
-      
+    if(_web3 !== null){
       const networkId = await _web3.eth.net.getId();
-      console.log("networkid " + networkId);
       const lotterynetwork = LotteryContract.networks[networkId];
-      console.log("lotterynetwork " + lotterynetwork);
       const _lottery = new _web3.eth.Contract( LotteryContract.abi, lotterynetwork.address);
-      console.log("_lottery " + _lottery);      
       const lotteryvaultnetwork = LotteryVault.networks[networkId];
-      console.log("lotteryvaultnetwork " + lotteryvaultnetwork);
       const _lotteryvault = new _web3.eth.Contract( LotteryVault.abi, lotteryvaultnetwork.address);
-      console.log("_lotteryvault " + _lotteryvault);
 
 
       // can only check if lottery is running if we have an account to call the method from
@@ -77,14 +68,11 @@ class App extends Component {
   // will re appear ... currently works ok.. not perfect because it requires 2 page refreshes (not end of world but
   // I'm not exactly sure why 2? ...
   postStateCallback = async () => {
-    console.log("componentDidMount set state callback ")
   
     if(this.state.accounts.length > 0){
-      console.log(" state accounts length is greater than 0")
       // try to get accounts - if not connected this will be an array length 0  
       const _accounts = await this.state.web3.eth.getAccounts(); 
       if(_accounts.length === 0){
-        console.log("Account in Storage but Not Connected -- clear storage");
         localStorage.removeItem('accounts');
         localStorage.removeItem('mm');
         this.setState({accounts: 0, mmConnected: 0});
@@ -117,9 +105,6 @@ class App extends Component {
 
   render() {
     const web3State = this.state.web3;
-    console.log("RENDER ")
-    console.log(web3State);
-    console.log("****** ")
 
     if(!web3State) {
       return <NoWeb3/>;

@@ -227,7 +227,7 @@ body{
   border: none;
   color: white;
   transition: all ease .5;
-  width: 50%;
+  width: 100%;
 }
 
 #CheckVaultButton {
