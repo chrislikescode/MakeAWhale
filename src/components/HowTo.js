@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Grid from '@mui/material/Grid/';
 
 
 
@@ -6,6 +7,7 @@ import React, { Component } from 'react';
 export class HowTo extends Component {
   render() {
     return (
+      <Grid item xs={12} md={3}>
         <div>
         <h2> How To: </h2>
         <ol>
@@ -27,6 +29,7 @@ export class HowTo extends Component {
 
         </ul>
         </div>
+      </Grid>
     
     );
   }

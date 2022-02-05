@@ -23,7 +23,7 @@ export class EntrantsTable extends Component {
             this.getCurrentEntrants();
 
             /* Add listener to update table when new entrant */
-            this._listenernewentrant = this.lottery.events.NewEntrant().on('data', event => this.handleNewEntrant(event));
+            this._listenernewentrant = this.lottery.events.NewEntrant({fromBlock: "latest" }).on('data', event => this.handleNewEntrant(event));
 
             /* Add listener to clear table when lotteyr ends */
             this._listenernewwinner = this.lottery.events.LotteryWinner().on('data', event => this.handleLotteryEnd(event));

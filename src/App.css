@@ -114,6 +114,15 @@ body{
     -8px -8px 0 #280A5E
 }
 
+#discordIcon {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  padding: 25px;
+  width: 50px;
+  opacity: 80%;
+}
+
 .SubMainHeader {
   margin-top: 25px;
   margin-bottom: 0px;
@@ -391,8 +400,16 @@ li {
 }
 
 
+/* Footer Styles */
+.disclaimer {
+  font-size: .8rem;
+  text-align: center;
+}
+
+
+
 /* Mobile Stylings */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
 
 
   .MainDefinition {

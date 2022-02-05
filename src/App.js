@@ -9,7 +9,9 @@ import "./App.css";
 
 /*Components */ 
 
+
 import Header from "./components/Header.js";
+import Footer from "./components/Footer.js";
 import Lottery from "./components/Lottery.js";
 import EntrantsTable from "./components/EntrantsTable.js";
 import HowTo from "./components/HowTo";
@@ -128,9 +130,9 @@ class App extends Component {
           lotteryvault={this.state.lotteryvault}
           />
         
-          <Grid item xs={12} md={3}>
-            <HowTo/>
-          </Grid>
+          <HowTo/>
+
+          <Footer/>
         </Grid>
       </div>
       )
