@@ -1,6 +1,6 @@
 import Grid from '@mui/material/Grid/';
 import React, { Component } from "react";
-import {FaDiscord} from '@react-icons/all-files/';
+import {FaDiscord} from '@react-icons/all-files/fa/FaDiscord';
 import {IconContext} from '@react-icons/all-files/';
 
 
