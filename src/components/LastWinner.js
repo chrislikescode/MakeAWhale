@@ -49,7 +49,7 @@ export class LastWinner extends Component {
             <div id="LastWinnerContainer" className="flex"> 
                 <div id="LastWinner" > 
                     <h2 className="text_white small_text"> Last Winner </h2>
-                    <h2 className="text_white small_text"> {this.state.lastWinner}</h2>
+                    <h2 className="text_white small_text lastwinneraddress"> {this.state.lastWinner}</h2>
                 </div>
             </div>
         </div>

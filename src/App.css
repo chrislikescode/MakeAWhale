@@ -120,8 +120,6 @@ body{
   text-align: left;
   font-size: 2rem;
   font-weight: bold;
-  letter-spacing: 4px;
-  word-spacing: -8px;
   color: white;
  
 }
@@ -147,6 +145,7 @@ body{
 blockquote {
   color: white;
   margin-bottom: 25px;
+  font-size: 1.5rem;
 
 }
 
@@ -389,4 +388,46 @@ li {
 
 .noweb3_text {
   margin: 20px 0 20px 0;
+}
+
+
+/* Mobile Stylings */
+@media screen and (max-width: 600px) {
+
+
+  .MainDefinition {
+    padding-right: 0;
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 25px;
+  }
+
+  .MainHeader {
+      font-size: 2rem;
+      margin-bottom: 50px;
+  }
+
+  .InspiredBy{
+    font-size: 1rem;
+    font-weight: 300;
+    color: white;
+    margin-bottom: 25px;
+  }
+
+  .SubMainHeader {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 1.5rem;
+  }
+
+  .EntrantsTableContainer {
+    display: none;
+  }
+
+  .lastwinneraddress {
+    font-size: .6rem;
+  }
+
 }
