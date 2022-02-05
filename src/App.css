@@ -430,4 +430,12 @@ li {
     font-size: .6rem;
   }
 
+  .noweb3_greeting{
+    font-size: 2rem;
+  }
+
+  .noweb3_emoji {
+    font-size: 4rem;
+  }
+
 }
