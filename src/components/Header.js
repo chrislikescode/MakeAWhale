@@ -1,7 +1,7 @@
 import Grid from '@mui/material/Grid/';
 import React, { Component } from "react";
-import {FaDiscord} from 'react-icons/fa';
-import {IconContext} from 'react-icons';
+import {FaDiscord} from '@react-icons/all-files/fa/FaDiscord';
+import {IconContext} from '@react-icons';
 
 
 class Header extends Component { 
