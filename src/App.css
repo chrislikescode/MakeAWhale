@@ -123,6 +123,11 @@ body{
   opacity: 80%;
 }
 
+#discordIcon:hover {
+  opacity: 100%;
+}
+
+
 .SubMainHeader {
   margin-top: 25px;
   margin-bottom: 0px;
@@ -403,6 +408,45 @@ li {
 .disclaimer {
   font-size: .8rem;
   text-align: center;
+}
+
+.footer-icons {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+
+
+#ethIcon {
+  width: 50px;
+  opacity: 80%;
+  margin: 25px;
+}
+
+#ethIcon:hover {
+  opacity: 100%;
+}
+
+#digitalOceanIcon {
+  width: 50px;
+  opacity: 80%;
+  margin: 25px;
+
+}
+
+#digitalOceanIcon:hover {
+  opacity: 100%;
+}
+
+#sslIcon {
+  width: 50px;
+  opacity: 80%;
+  margin: 25px;
+
+}
+
+#sslIcon {
+  opacity: 100%;
 }
 
 
