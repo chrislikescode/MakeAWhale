@@ -20,8 +20,9 @@ class Header extends Component {
             </Grid>
             <Grid item xs={12} >
                 <h2 className="SubMainHeader" > What is makeawhale.com?</h2>
-                <h2 className="text_white med_text description"> A DAPP Lottery on Ethereum that collects entry fees into a pot.
-                When the lottery ends, a winner is chosen. This person receives the total amount in the pot. </h2>
+                <h2 className="text_white med_text description"> A random and peer-to-peer redistribution of wealth. More specficially, it is Decentralized Application (DAPP) on Ethereum that collects entry fees into a pot.
+                When the lottery ends, a donor is chosen. This person  will then receive the total amount in the pot. </h2>
+
             </Grid>
         </Grid>
         )
