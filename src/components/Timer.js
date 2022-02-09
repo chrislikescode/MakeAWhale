@@ -38,6 +38,7 @@ class Timer extends Component {
         
         /* Set Light Class and staus mesasage*/
         let _lightClass, _statusMessage;
+
         if(this.lotteryRunning){
             _lightClass = "on";
             _statusMessage = "Lottery ends on block ";

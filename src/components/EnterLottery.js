@@ -23,7 +23,10 @@ export class EnterLottery extends Component {
     enterLotteryHandler = async () => {
         try {
           const account = await this.web3.eth.getAccounts();
-          await this.lottery.methods.enter(account[0]).send({from: account[0], value:  this.web3.utils.toWei(this.state.entryFee) });
+          await this.lottery.methods.enter(account[0]).send({from: account[0], value:  this.web3.utils.toWei(this.state.entryFee) })
+          .then(() =>{ 
+            alert("You have Entered!")
+          });
         }catch (err){
           console.error(err);
         }

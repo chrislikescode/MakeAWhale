@@ -74,7 +74,7 @@ export class VaultButtons extends Component {
         >
             <Box className="winner-modal-box">
             <Typography id="modal-modal-title" variant="h6" component="h2">
-            You won! {this.state.value}
+            You won! {this.web3.utils.fromWei(this.state.value.toString(), 'ether')} ETH
              </Typography>
             <Button variant="contained" id="WithdrawWinnings" className="vaultbutton" onClick={this.withdrawWinnings}> Withdraw Winnings </Button>
             </Box>

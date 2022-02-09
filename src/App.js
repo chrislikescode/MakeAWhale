@@ -47,10 +47,10 @@ class App extends Component {
       const _lotteryvault = new _web3.eth.Contract( LotteryVault.abi, lotteryvaultnetwork.address);
 
 
-      // can only check if lottery is running if we have an account to call the method from
+      // can only check if lottery is running if we have an account to call from
       // SO, first we chek if we are. if we are, we check, if not, we assume the lottery is not running.. ( maybe a better way to handle this )
-      const mm_logged = _web3.eth.getAccounts();
-      const _runninglot = mm_logged.length > 0  ? 0 : await _lottery.methods.lotteryRunning().call();
+      const mm_logged = await _web3.eth.getAccounts();
+      const _runninglot = mm_logged.length > 0  ? await _lottery.methods.lotteryRunning().call() : 0;
 
       // set state
       this.setState({ 
@@ -70,7 +70,7 @@ class App extends Component {
   // will re appear ... currently works ok.. not perfect because it requires 2 page refreshes (not end of world but
   // I'm not exactly sure why 2? ...
   postStateCallback = async () => {
-  
+
     if(this.state.accounts.length > 0){
       // try to get accounts - if not connected this will be an array length 0  
       const _accounts = await this.state.web3.eth.getAccounts(); 
