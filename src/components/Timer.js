@@ -45,7 +45,7 @@ class Timer extends Component {
 
             /* if the current block is greater than the end block then the lottery is ending */
             /* so set the status message to represent this change */
-            if(_currentBlock > _lotteryEndBlock){
+            if(_currentBlock >= _lotteryEndBlock){
                 _statusMessage = "Lottery Ending...";
                 _lotteryEndBlock  = "";
             }
@@ -83,7 +83,7 @@ class Timer extends Component {
                     lotteryBlocksLeft: _lotteryBlocksLeft, 
                 });
             }
-        }, 15000);
+        }, 5000);
 
         /* Setup event listener to update state when lottery ends */
         this._listenernewwinner = this.lottery.events.LotteryWinner().on('data', event => this.handleLotteryEnd(event));
@@ -106,6 +106,18 @@ class Timer extends Component {
         this._listenernewwinner.unsubscribe();
     }
 
+    secondsToHms(d) {
+        d = Number(d);
+        var h = Math.floor(d / 3600);
+        var m = Math.floor(d % 3600 / 60);
+        var s = Math.floor(d % 3600 % 60);
+    
+        var hDisplay = h > 0 ? h + (h == 1 ? " hour, " : " hours, ") : "";
+        var mDisplay = m > 0 ? m + (m == 1 ? " minute, " : " minutes, ") : "";
+        var sDisplay = s > 0 ? s + (s == 1 ? " second" : " seconds") : "";
+        return 'Est time remaining: ' + hDisplay + mDisplay + sDisplay; 
+    }
+
     render() {
         return(
             <div id="LotteryTimer" className="flex"> 
@@ -113,7 +125,8 @@ class Timer extends Component {
                     <div id="LotteryLight" className={this.state.lightClass}></div>
                     <h2 className="text_white med_text">blocks left</h2> 
                     <h2 className="text_white big_big_text"> <span>{this.lotteryRunning ? this.state.lotteryBlocksLeft :  this.state.emoji} </span> </h2> 
-                    <h3 className="text_white small_text">{this.state.statusMessage}  {this.lotteryRunning ? this.state.lotteryEndBlock : "" }</h3> 
+                    <h2 className="text_white small_text"> {this.lotteryRunning ? this.secondsToHms(this.state.lotteryBlocksLeft * 15) : ''}</h2> 
+                    <h3 className="text_white small_text">{this.state.statusMessage} {this.lotteryRunning  ? this.state.lotteryEndBlock : "" }</h3> 
                     <h3 className="text_white small_text">Current block: {this.state.currentBlock} </h3> 
                 </div>
             </div>

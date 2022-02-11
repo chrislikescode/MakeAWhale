@@ -25962,10 +25962,87 @@
       "links": {},
       "address": "0x418b84BF55635Ed89D6C3E48DF2e4b36b180a703",
       "transactionHash": "0xea7fcdbbaa783f0495f68fba539008e46fc826f2c8c0885d5a9e550f57673cdf"
+    },
+    "5777": {
+      "events": {
+        "0x42da29f4f7ae27bdc650322fcbe8b195ca17a63b0ae83b04577efe0e3e079c0c": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "uint256",
+              "name": "startblock",
+              "type": "uint256"
+            },
+            {
+              "indexed": true,
+              "internalType": "uint256",
+              "name": "endblock",
+              "type": "uint256"
+            }
+          ],
+          "name": "LotteryStarted",
+          "type": "event"
+        },
+        "0x275eaacf9e506f9c68b251c2f97cf723c4fb9a3b94e42a1dfb581543c135f0c0": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "lotterywinner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "uint256",
+              "name": "winningpot",
+              "type": "uint256"
+            }
+          ],
+          "name": "LotteryWinner",
+          "type": "event"
+        },
+        "0x137d2ef4b9d16c904b5b2d3c3ad3d293f0e7bae5cb321f99d496de891135870a": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "entrant",
+              "type": "address"
+            }
+          ],
+          "name": "NewEntrant",
+          "type": "event"
+        },
+        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x1e7e3602F2cB345761648C62E4278d8619B37C48",
+      "transactionHash": "0xc9e28137fea657cb7b3e2e6277024cc1c9ceff1c7f2b3617dd095f5bd3d53893"
     }
   },
   "schemaVersion": "3.4.4",
-  "updatedAt": "2022-02-09T01:16:24.376Z",
+  "updatedAt": "2022-02-10T01:06:41.767Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
