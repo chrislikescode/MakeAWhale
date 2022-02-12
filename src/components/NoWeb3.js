@@ -28,9 +28,7 @@ export class NoWeb3 extends Component {
                         <Button variant="contained" id="MetaMaskDownload" onClick={this.downloadMetamask}>Download MetaMask</Button>
                     </div>
                 </Grid>
-                <Grid item xs={12} sm={12} md={3}>
                  <HowTo/>
-                </Grid>
             </Grid>
         </div>
     );

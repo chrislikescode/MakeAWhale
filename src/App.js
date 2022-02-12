@@ -39,6 +39,7 @@ class App extends Component {
     // Get network provider and web3 instance of Lottery and LotteryVault.
     const _web3 = await getWeb3();
 
+
     if(_web3 !== null){
       const networkId = await _web3.eth.net.getId();
       const lotterynetwork = LotteryContract.networks[networkId];
@@ -51,6 +52,7 @@ class App extends Component {
       // SO, first we chek if we are. if we are, we check, if not, we assume the lottery is not running.. ( maybe a better way to handle this )
       const mm_logged = await _web3.eth.getAccounts();
       const _runninglot = mm_logged.length > 0  ? await _lottery.methods.lotteryRunning().call() : 0;
+
 
       // set state
       this.setState({ 
@@ -65,11 +67,19 @@ class App extends Component {
  
   };
 
+  componentWillUnmount = async () => {
+    window.ethereum.removeListener("accountsChanged", this.MetaMaskAccountChanged);
+  }
+
   // handle situation where metamask disconnects but accounts and mm are still saved in local storage 
   // this is needed in order to reset the local storage and re set the state so the metamask button 
   // will re appear ... currently works ok.. not perfect because it requires 2 page refreshes (not end of world but
   // I'm not exactly sure why 2? ...
   postStateCallback = async () => {
+    
+    // setup account change listener 
+    window.ethereum.on('accountsChanged', this.MetaMaskAccountChanged ); 
+    
 
     if(this.state.accounts.length > 0){
       // try to get accounts - if not connected this will be an array length 0  
@@ -81,6 +91,12 @@ class App extends Component {
       }
     }
 
+  }
+
+  MetaMaskAccountChanged = async () => {
+    const _accounts = await this.state.web3.eth.getAccounts();
+    localStorage.setItem('accounts', JSON.stringify(_accounts));
+    this.setState({ accounts: _accounts })
   }
  
   /* Helper Methods for Accessing Local Storage */
