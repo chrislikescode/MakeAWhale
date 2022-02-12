@@ -123,6 +123,15 @@ body{
   opacity: 80%;
 }
 
+#twitterIcon {
+  position: fixed;
+  top: 100px;
+  right: 0px;
+  padding: 25px;
+  width: 50px;
+  opacity: 80%;
+}
+
 #discordIcon:hover {
   opacity: 100%;
 }
