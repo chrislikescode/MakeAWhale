@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import LotteryContract from "./contracts/Lottery.json";
-import LotteryVault from "./contracts/LotteryVault.json";
+import MakeAWhaleContract from "./contracts/MakeAWhale.json";
+import WinnerVault from "./contracts/WhaleWinnerVault.json";
 import getWeb3 from "./getWeb3";
 
 /*styles*/
@@ -12,7 +12,7 @@ import "./App.css";
 
 import Header from "./components/Header.js";
 import Footer from "./components/Footer.js";
-import Lottery from "./components/Lottery.js";
+import MakeAWhale from "./components/MakeAWhale.js";
 import EntrantsTable from "./components/EntrantsTable.js";
 import HowTo from "./components/HowTo";
 import NoWeb3 from "./components/NoWeb3";
@@ -20,15 +20,14 @@ import NoWeb3 from "./components/NoWeb3";
 import Grid from '@mui/material/Grid/';
 
 
-// check all contract variables and replace with lottery
-// create instance of lotteryvault
+
 
 class App extends Component {
 
   state = {
-    lotteryRunning: 0, 
-    lottery: null,
-    lotteryvault: null,
+    running: 0, 
+    WhaleContract: null,
+    WinnerVault: null,
     mmConnected: JSON.parse(localStorage.getItem('mm')) || 0, 
     accounts: JSON.parse(localStorage.getItem('accounts')) || 0, 
     web3: null
@@ -36,30 +35,30 @@ class App extends Component {
 
   componentDidMount = async () => {
 
-    // Get network provider and web3 instance of Lottery and LotteryVault.
+    // Get network provider and web3 instance of MakeAWhaleContract and WinnerVault.
     const _web3 = await getWeb3();
 
 
     if(_web3 !== null){
       const networkId = await _web3.eth.net.getId();
-      const lotterynetwork = LotteryContract.networks[networkId];
-      const _lottery = new _web3.eth.Contract( LotteryContract.abi, lotterynetwork.address);
-      const lotteryvaultnetwork = LotteryVault.networks[networkId];
-      const _lotteryvault = new _web3.eth.Contract( LotteryVault.abi, lotteryvaultnetwork.address);
+      const makeawhalenetwork = MakeAWhaleContract.networks[networkId];
+      const _makeawhalecontract = new _web3.eth.Contract( MakeAWhaleContract.abi, makeawhalenetwork.address);
+      const winnervaultnetwork = WinnerVault.networks[networkId];
+      const _winnervault = new _web3.eth.Contract( WinnerVault.abi, winnervaultnetwork.address);
 
 
-      // can only check if lottery is running if we have an account to call from
-      // SO, first we chek if we are. if we are, we check, if not, we assume the lottery is not running.. ( maybe a better way to handle this )
+      // can only check if MakeAWahel is running if we have an account to call from
+      // SO, first we chek if we are. if we are, we check, if not, we assume the MakeAWhaleContract is not running.. ( maybe a better way to handle this )
       const mm_logged = await _web3.eth.getAccounts();
-      const _runninglot = mm_logged.length > 0  ? await _lottery.methods.lotteryRunning().call() : 0;
+      const _runninglot = mm_logged.length > 0  ? await _makeawhalecontract.methods.running().call() : 0;
 
 
       // set state
       this.setState({ 
         web3: _web3, 
-        lottery: _lottery, 
-        lotteryvault: _lotteryvault,
-        lotteryRunning: _runninglot
+        WhaleContract: _makeawhalecontract, 
+        WinnerVault: _winnervault,
+        running: _runninglot
         }, this.postStateCallback);  
     } else {
       console.log("No web3 available, need to install MM");
@@ -133,17 +132,17 @@ class App extends Component {
         <Grid container spacing={2} direction="row-reverse">
         
           <EntrantsTable 
-          lottery={this.state.lottery}
+          whale={this.state.WhaleContract}
           web3={this.state.web3}
-            lotteryRunning={this.state.lotteryRunning}
+            running={this.state.running}
             />
         
-          <Lottery
-          lottery={this.state.lottery} 
+          <MakeAWhale
+          whale={this.state.WhaleContract} 
           web3={this.state.web3} 
-          lotteryRunning={this.state.lotteryRunning}
+          running={this.state.running}
           mmConnected={this.state.mmConnected}
-          lotteryvault={this.state.lotteryvault}
+          winnervault={this.state.WinnerVault}
           />
         
           <HowTo/>

@@ -16,14 +16,14 @@ export class VaultButtons extends Component {
 
     constructor(props){
         super(props);
-        this.lotteryvault = this.props.lotteryvault;
+        this.winnervault = this.props.winnervault;
         this.web3 = this.props.web3;
-        this.lotteryrunning = this.props.lotteryrunning;
+        this.running = this.props.running;
     }
 
     componentDidUpdate(prevProps) {
-        if(this.props.lotteryrunning !== prevProps.lotteryrunning){
-            this.lotteryrunning = this.props.lotteryrunning;
+        if(this.props.running !== prevProps.running){
+            this.running = this.props.running;
         }
     }
 
@@ -31,7 +31,7 @@ export class VaultButtons extends Component {
     checkVaultBalance = async () => {
         try {
             const account = await this.web3.eth.getAccounts();
-            const _value = await this.lotteryvault.methods.depositsOf(account[0]).call();
+            const _value = await this.winnervault.methods.depositsOf(account[0]).call();
             if(_value > 0) {
                 this.handleOpen(_value);
             } else{
@@ -54,7 +54,7 @@ export class VaultButtons extends Component {
     withdrawWinnings = async () => { 
         try {
             const account = await this.web3.eth.getAccounts();
-            await this.lotteryvault.methods.withdraw(account[0]).send({from: account[0]});
+            await this.winnervault.methods.withdraw(account[0]).send({from: account[0]});
         } catch (err){
             console.error(err);
         }

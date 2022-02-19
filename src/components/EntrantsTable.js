@@ -12,7 +12,7 @@ export class EntrantsTable extends Component {
         super(props);
         this.web3 = props.web3;
         this.accounts = props.accounts;
-        this.lottery = props.lottery;
+        this.whale = props.whale;
         this._listenernewentrant = null;
         this._listenernewwinner = null;
     };
@@ -20,13 +20,17 @@ export class EntrantsTable extends Component {
     componentDidMount = async () => {
         try {
             /* Get Current Entrants and set state */
-            this.getCurrentEntrants();
+
+            let running = await this.whale.methods.running().call();
+            if(running) {
+                this.getCurrentEntrants();
+            }
 
             /* Add listener to update table when new entrant */
-            this._listenernewentrant = this.lottery.events.NewEntrant({fromBlock: "latest" }).on('data', event => this.handleNewEntrant(event));
+            this._listenernewentrant = this.whale.events.NewEntrant({fromBlock: "latest" }).on('data', event => this.handleNewEntrant(event));
 
             /* Add listener to clear table when lotteyr ends */
-            this._listenernewwinner = this.lottery.events.LotteryWinner().on('data', event => this.handleLotteryEnd(event));
+            this._listenernewwinner = this.whale.events.NewWhale().on('data', event => this.handleWhaleEnd(event));
 
         } catch (err) {
             console.error(err);
@@ -39,7 +43,7 @@ export class EntrantsTable extends Component {
     }
 
     getCurrentEntrants = async () => {
-        const _currentEntrants = await this.lottery.methods.getEntrantsArray(10, 0).call();
+        const _currentEntrants = await this.whale.methods.getEntrantsArray(10, 0).call();
         if(_currentEntrants != null){
             this.setState({currentEntrants: _currentEntrants});
         }
@@ -48,7 +52,7 @@ export class EntrantsTable extends Component {
     
     handleNewEntrant = async(event) => {
         let newEntrant = this.web3.eth.abi.decodeParameter('address',event.raw.topics[1]);
-        if(this.state.currentEntrants != null){ 
+        if(this.state.currentEntrants.length > 0){ 
             let _joined = this.state.currentEntrants.concat(newEntrant);
             // only show last 10 entrants
             if(_joined.length > 10){
@@ -56,14 +60,14 @@ export class EntrantsTable extends Component {
             }
             this.setState({currentEntrants: _joined});
         } else {
-            this.setState({currentEntrants: newEntrant});
+            this.setState({currentEntrants: [newEntrant]});
         }
        
         
     }
 
 
-    handleLotteryEnd = async(event) => {
+    handleWhaleEnd = async(event) => {
         this.setState({currentEntrants: []});
     }
 

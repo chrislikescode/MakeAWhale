@@ -10,7 +10,7 @@ export class LastWinner extends Component {
     
     constructor(props){
         super(props);
-        this.lottery = props.lottery;
+        this.whale = props.whale;
         this.web3 = props.web3;
         this._listenerwinner = null;
     }
@@ -22,7 +22,7 @@ export class LastWinner extends Component {
         this.getLastWinner();
 
         // add event listener for a new winner to update UI without refresh  
-        this._listenerwinner = this.lottery.events.LotteryWinner().on('data', event => this.handleUpdateLastWinner(event));
+        this._listenerwinner = this.whale.events.NewWhale().on('data', event => this.handleUpdateLastWinner(event));
        
     }
 
@@ -31,7 +31,7 @@ export class LastWinner extends Component {
     }
 
     getLastWinner = async () => {
-        const _lastWinner = await this.lottery.methods.LastWinner().call();
+        const _lastWinner = await this.whale.methods.LastWinner().call();
         this.setState({lastWinner: _lastWinner});
     }
 
@@ -45,7 +45,7 @@ export class LastWinner extends Component {
   render() {
     return (
         <div>
-            <WinnerModal lottery={this.lottery} web3={this.web3}/>
+            <WinnerModal whale={this.whale} web3={this.web3}/>
             <div id="LastWinnerContainer" className="flex"> 
                 <div id="LastWinner" > 
                     <h2 className="text_white small_text"> Last Winner </h2>

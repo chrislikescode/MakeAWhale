@@ -12,8 +12,8 @@ export class HowTo extends Component {
         <h2> How To: </h2>
         <ol>
             <li> Install MetaMask and fill it with ETH </li>
-            <li> Enter lottery ( Lottery has to be running )  </li>
-            <li> When the lottery ends, click "check if I won button" ( light will be red ) </li>
+            <li> Enter to make or become a whale !  Make a whale has to be running )  </li>
+            <li> When block count reaches 0 and make a whale ends, click "check if I won button" ( light will be red ) </li>
             <li> If you won you will be able to click "withdraw funds" to receive your winnings </li>
 
 
@@ -21,7 +21,6 @@ export class HowTo extends Component {
         <h2> More info: </h2>
         <ul>
             <li> 10% will go to the contract for further dev, giveaways and more. </li>
-            <li> We are currently in beta, if you would like to help join the discord</li>
 
         </ul>
         </div>

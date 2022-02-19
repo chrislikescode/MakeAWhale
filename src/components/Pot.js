@@ -8,24 +8,24 @@ export class Pot extends Component {
   
     constructor(props){ 
         super(props);
-        this.lottery = this.props.lottery;
+        this.whale = this.props.whale;
         this.web3 = this.props.web3;
-        this.lotteryRunning = this.props.lotteryRunning;
+        this.running = this.props.running;
         this._newentrantlistener = null;
         this._listenernewwinner = null;
     }
 
 
     componentDidMount = async () =>{
-        if(this.lotteryRunning){
+        if(this.running){
             /* get Current pot and set state */
            this.getCurrentPot();
 
            /* set listener for new entrant and get new pot */
-           this._newentrantlistener = this.lottery.events.NewEntrant().on('data', event => this.getCurrentPot(event));
+           this._newentrantlistener = this.whale.events.NewEntrant().on('data', event => this.getCurrentPot(event));
 
-            /* Setup event listener to update state when lottery ends */
-            this._listenernewwinner = this.lottery.events.LotteryWinner().on('data', event => this.handleLotteryEnd(event));
+            /* Setup event listener to update state when whale ends */
+            this._listenernewwinner = this.whale.events.NewWhale().on('data', event => this.handleNewWinner(event));
 
         }
 
@@ -36,19 +36,19 @@ export class Pot extends Component {
         this._listenernewwinner.unsubscribe();
     }
 
-    handleLotteryEnd = async(event) => {
+    handleNewWinner = async(event) => {
         this.setState({currentPot: 0});
     }
 
     getCurrentPot = async () =>{
-        const _currentPot = await this.lottery.methods.currentPot().call();
+        const _currentPot = await this.whale.methods.currentPot().call();
         this.setState({currentPot: _currentPot});
     }
 
     render() {
         return (
-            <div id="LotteryStats" className="flex"> 
-                <div id="LotteryStatsHeader">
+            <div id="MakeAWhaleStats" className="flex"> 
+                <div id="MakeAWhaleStatsHeader">
                     <h2 className="text_white small_text"> current pot </h2>
                     <h2 className="text_white big_text"> {this.web3.utils.fromWei(this.state.currentPot.toString(), 'ether')} eth</h2>
 

@@ -13,19 +13,19 @@ export class WinnerModal extends Component {
 
   constructor(props){
     super(props);
-    this.lottery = props.lottery;
+    this.whale = props.whale;
     this.web3 = props.web3;
-    this._lotterywinnerlistener = null;
+    this._newwinnerlistener = null;
 }
 
  
   componentDidMount = async () => {
      // add event listener for a new winner and display the modal 
-     this._lotterywinnerlistener = this.lottery.events.LotteryWinner().on('data', event => this.handleOpen(event));
+     this._newwinnerlistener = this.whale.events.NewWhale().on('data', event => this.handleOpen(event));
   }
 
   componentWillUnmount = async () => {
-    this._lotterywinnerlistener.unsubscribe();
+    this._newwinnerlistener.unsubscribe();
   }
 
 

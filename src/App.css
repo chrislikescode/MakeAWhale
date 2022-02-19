@@ -1,6 +1,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;900&display=swap');
 
+@font-face {
+  font-family: 'Cyber';
+  src: url("./fonts/Cyber.otf") format("opentype");
+
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -17,7 +23,10 @@ button {
   margin: 5px;
 }
 
+li{
 
+  margin: 0;
+}
 
 /* General Styles */
 
@@ -94,12 +103,17 @@ body{
   font-size: 8rem;
 }
 
+.half {
+  width: 50%;
+}
+
 .MainHeader {
+  font-family: 'Cyber';
   margin-top: 25px;
   margin-bottom: 80px;
   text-align: left;
   font-size: 5rem;
-  font-weight: bold;
+  font-weight: 100;
   letter-spacing: 4px;
   word-spacing: -8px;
   color: #6825E6;
@@ -132,7 +146,23 @@ body{
   opacity: 80%;
 }
 
+#instagramIcon {
+  position: fixed;
+  top: 200px;
+  right: 0px;
+  padding: 25px;
+  width: 50px;
+  opacity: 80%;
+}
+
+
 #discordIcon:hover {
+  opacity: 100%;
+}
+#twitterIcon:hover {
+  opacity: 100%;
+}
+#instagramIcon:hover {
   opacity: 100%;
 }
 
@@ -177,7 +207,7 @@ blockquote {
 
 /* Lottery Timer */
 
-#LotteryContainer {
+#MakeAWhaleContainer {
   background-color: #3D334F;
   padding: 10px;
   border-radius: 20px;
@@ -187,7 +217,7 @@ blockquote {
 }
 
 
-#LotteryLight {
+#MakeAWhaleTimerLight {
   border-radius: 100px;
   width: 10px;
   height: 10px;
@@ -216,12 +246,12 @@ blockquote {
   position: relative; 
 }
 
-#LotteryTimer {
+#MakeAWhaleTimer {
   width: 100%;
   justify-content: center;
 }
 
-#LotteryTimerHeader {
+#MakeAWhaleTimerHeader {
   width: 100%;
   background-color: rgb(15, 31, 44);
   padding: 20px;
@@ -231,12 +261,12 @@ blockquote {
 }
 
 
-/* Lottery Stats */
-#LotteryStats {
+/* Make A Whale Stats Stats */
+#MakeAWhaleStats {
   justify-content: center;
 }
 
-#LotteryStatsHeader {
+#MakeAWhaleStatsHeader {
   width: 100%;
   background-color: rgb(15, 31, 44);
   padding: 20px;
@@ -244,7 +274,7 @@ blockquote {
 }
 
 /* Enter Lottery Button */
-#EnterLottery {
+#Enter {
   justify-content: center;
 
 }
@@ -458,7 +488,11 @@ li {
   opacity: 100%;
 }
 
-
+.whaleImage {
+  position: absolute;
+  right: 0;
+  width: 800px;
+}
 
 /* Mobile Stylings */
 @media screen and (max-width: 800px) {
