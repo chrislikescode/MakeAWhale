@@ -135,6 +135,7 @@ body{
   padding: 25px;
   width: 50px;
   opacity: 80%;
+  z-index: 99;
 }
 
 #twitterIcon {
@@ -144,6 +145,8 @@ body{
   padding: 25px;
   width: 50px;
   opacity: 80%;
+  z-index: 99;
+
 }
 
 #instagramIcon {
@@ -153,6 +156,8 @@ body{
   padding: 25px;
   width: 50px;
   opacity: 80%;
+  z-index: 99;
+
 }
 
 
