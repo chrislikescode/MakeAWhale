@@ -42,7 +42,7 @@ class App extends Component {
     if(_web3 !== null){
       const networkId = await _web3.eth.net.getId();
       const makeawhalenetwork = MakeAWhaleContract.networks[networkId];
-      const _makeawhalecontract = new _web3.eth.Contract( MakeAWhaleContract.abi, makeawhalenetwork.address);
+      const _makeawhalecontract = new _web3.eth.Contract( MakeAWhaleContract.abi, '0xc5C05190d405dAeaC7d2641Cc1546Ab97439d0c8');
       const winnervaultnetwork = WinnerVault.networks[networkId];
       const _winnervault = new _web3.eth.Contract( WinnerVault.abi, winnervaultnetwork.address);
 
