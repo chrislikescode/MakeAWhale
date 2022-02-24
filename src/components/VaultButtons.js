@@ -35,7 +35,7 @@ export class VaultButtons extends Component {
             if(_value > 0) {
                 this.handleOpen(_value);
             } else{
-                alert("You did not win")
+                alert("Not today my friend.")
             }
         } catch (err){
             console.error(err);
