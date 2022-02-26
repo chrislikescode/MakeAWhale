@@ -44,7 +44,7 @@ class App extends Component {
       const makeawhalenetwork = MakeAWhaleContract.networks[networkId];
       const _makeawhalecontract = new _web3.eth.Contract( MakeAWhaleContract.abi, makeawhalenetwork.address);
       const winnervaultnetwork = WinnerVault.networks[networkId];
-      const _winnervault = new _web3.eth.Contract( WinnerVault.abi, '0xad30292AEB9dbA17746FdE0Ef228a4fea3050d35');
+      const _winnervault = new _web3.eth.Contract( WinnerVault.abi, '0xBb1181b26c7dCcC799E1785768B51385e6DBF789');
 
 
       // can only check if MakeAWahel is running if we have an account to call from

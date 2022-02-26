@@ -1,5 +1,4 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;900&display=swap');
 
 @font-face {
   font-family: 'Cyber';
@@ -41,6 +40,7 @@ h1, h2, h3, li{
 p{ 
   font-family: 'Red Hat Text', sans-serif; 
 }
+
 body{ 
   background: hsla(262, 76%, 6%, 1);  /* fallback for old browsers */
   background: radial-gradient(circle, hsla(262, 76%, 6%, 1) 0%, rgb(15, 31, 44) 100%) ;/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -49,7 +49,7 @@ body{
 
   vertical-align: middle;
 
-  font-family: 'Lato', sans-serif;
+  font-family: 'Red Hat Display', sans-serif;
 
   padding: 50px;
 
@@ -593,12 +593,78 @@ li {
 /* Mobile Stylings */
 @media screen and (max-width: 800px) {
 
+  body {
+    padding: 20px;
+  }
+  #navigation {
+    height: 50px;
+    width: 100%;
+    flex-direction: row;
+    justify-content: start;
+    padding: 0;
+  }
+
+  #navigationBackground {
+    height: 20px;
+    width: 100%;
+    flex-direction: row;
+    justify-content: start;
+  }
+
+  .icon {
+    margin-top: 0;
+    margin-left: 50px;
+  }
+
+  #mainCTA {
+    width: 100%;
+    margin-top: 100px;
+  }
+
+  #HeaderV2 {
+    width: 100%;
+    margin-left: 0; 
+    background-size: 100%;
+  }
+
+  #HeaderV2_left {
+    padding-left: 0;
+  }
+
+  .whaleImage {
+    right: -60vw;
+    top: 460px;
+    width: 160vw;
+  }
+
+  #textBoxRow {
+    margin-top: 500px;
+  }
+
+  .textBlock {
+    padding: 25px 20px;
+    z-index: 10;
+    position: relative;
+  }
+
+  
+  #mainIcon {
+    position: relative;
+  }
+
+
 
   .MainDefinition {
     padding-right: 0;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 300;
     margin-bottom: 25px;
+    width: 100%;
+    
+  }
+
+  #defineTitle {
+    font-size: 1.2rem;
   }
 
   .MainHeader {
@@ -614,11 +680,24 @@ li {
   }
 
   .SubMainHeader {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+  }
+
+
+  .nomatterwhat {
+    font-size: 1rem;
   }
 
   .description {
     font-size: 1rem;
+  }
+
+  #MakeAWhaleMainContent {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    margin-top: -150px;
   }
 
   .EntrantsTableContainer {
