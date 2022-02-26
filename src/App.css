@@ -148,7 +148,7 @@ body{
 }
 #HeaderV2 {
   padding-bottom: 100px;
-  background-image: url('http://localhost:3000/BGelement.svg');
+  background-image: url('/BGelement.svg');
   background-repeat: no-repeat;
   background-position: 0 90%;
   background-size: 50%;
@@ -537,7 +537,7 @@ li {
 
 /* Footer Styles */
 #footer {
-  background-image: url('http://localhost:3000/BGelement.svg');
+  background-image: url('/BGelement.svg');
   background-repeat: no-repeat;
   background-position: 100% 0;
   background-size: 50%;
