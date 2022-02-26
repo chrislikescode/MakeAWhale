@@ -16,7 +16,6 @@ export class LastWinner extends Component {
     }
 
 
-
     componentDidMount = async () => {
         //get last winner and update state
         this.getLastWinner();
@@ -31,8 +30,9 @@ export class LastWinner extends Component {
     }
 
     getLastWinner = async () => {
-        const _lastWinner = await this.whale.methods.LastWinner().call();
-        this.setState({lastWinner: _lastWinner});
+
+        const _lastwinner = await this.whale.getPastEvents("NewWhale" ,{ fromBlock: "earliest"});
+        this.setState({lastWinner: _lastwinner[0]['returnValues'][0]});
     }
 
     handleUpdateLastWinner = async (event) => {
