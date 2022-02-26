@@ -10,7 +10,7 @@ import "./App.css";
 /*Components */ 
 
 
-import Header from "./components/Header.js";
+import HeaderV2 from "./components/HeaderV2.js";
 import Footer from "./components/Footer.js";
 import MakeAWhale from "./components/MakeAWhale.js";
 import EntrantsTable from "./components/EntrantsTable.js";
@@ -44,7 +44,7 @@ class App extends Component {
       const makeawhalenetwork = MakeAWhaleContract.networks[networkId];
       const _makeawhalecontract = new _web3.eth.Contract( MakeAWhaleContract.abi, makeawhalenetwork.address);
       const winnervaultnetwork = WinnerVault.networks[networkId];
-      const _winnervault = new _web3.eth.Contract( WinnerVault.abi, '0x76Bd4Eb4aD0F3eA18824843DE3F396CA3E3f4c9E');
+      const _winnervault = new _web3.eth.Contract( WinnerVault.abi, '0xc5C05190d405dAeaC7d2641Cc1546Ab97439d0c8');
 
 
       // can only check if MakeAWahel is running if we have an account to call from
@@ -128,8 +128,8 @@ class App extends Component {
     } else {
       return (
       <div>
-        <Header/>
-        <Grid container spacing={2} direction="row-reverse">
+        <HeaderV2/>
+        <Grid id="MakeAWhaleMainContent"container spacing={2} direction="row-reverse">
         
           <EntrantsTable 
           whale={this.state.WhaleContract}

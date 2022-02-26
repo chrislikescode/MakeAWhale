@@ -7,7 +7,7 @@ import Grid from '@mui/material/Grid/';
 export class HowTo extends Component {
   render() {
     return (
-      <Grid item xs={12} md={3}>
+      <Grid item xs={12} md={12} lg={3}>
         <div>
         <h2> How To: </h2>
         <ol>

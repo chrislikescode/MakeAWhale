@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Grid from '@mui/material/Grid/';
 import Button from '@mui/material/Button';
 
-import Header from './Header';
+import HeaderV2 from './HeaderV2';
 import HowTo from './HowTo';
 
 export class NoWeb3 extends Component {
@@ -17,8 +17,8 @@ export class NoWeb3 extends Component {
   render() {
     return (
         <div>
-            <Header/>
-            <Grid container spacing={2} direction="row-reverse">
+            <HeaderV2/>
+            <Grid id="MakeAWhaleMainContent" container spacing={2} direction="row-reverse">
                 <Grid item xs={12} sm={12} md={3}>
                 </Grid>
                 <Grid item id="NoWeb3Item" xs={12} sm={12} md={6}>

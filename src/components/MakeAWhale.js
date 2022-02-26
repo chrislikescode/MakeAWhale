@@ -27,7 +27,7 @@ class MakeAWhale extends Component {
     
     render() {
         return( 
-            <Grid item id="MakeAWhaleContainer" xs={12} sm={12} md={5}>
+            <Grid item id="MakeAWhaleContainer" xs={12} sm={12} md={12} lg={5}>
                 <Timer whale={this.whale} web3={this.web3} running={this.running}></Timer>
                 <Pot whale={this.whale} web3={this.web3} running={this.running}></Pot>
                 <LastWinner whale={this.whale} web3={this.web3} running={this.running}></LastWinner>

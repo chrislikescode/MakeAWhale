@@ -73,7 +73,7 @@ export class EntrantsTable extends Component {
 
   render() {
     return(
-        <Grid item xs={12} md={4}>
+        <Grid item xs={12} md={12} lg={4}>
             <div className="EntrantsTableContainer">
                 <h2 className="text_white">Last 10 Entrants</h2> 
                 <div className="EntrantsTableDiv">

@@ -7,6 +7,8 @@
 
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;700&family=Red+Hat+Text&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -14,10 +16,8 @@
 
 
 a {
-  color: #6825E6;
-  font-weight: 300;
+  color: #02F4F5;
 }
-
 
 button {
   margin: 5px;
@@ -31,12 +31,16 @@ li{
 /* General Styles */
 
 h1, h2, h3, li{
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
+  font-family: 'Red Hat Display', sans-serif;
   color: white;
 
 }
 
+
+
+p{ 
+  font-family: 'Red Hat Text', sans-serif; 
+}
 body{ 
   background: hsla(262, 76%, 6%, 1);  /* fallback for old browsers */
   background: radial-gradient(circle, hsla(262, 76%, 6%, 1) 0%, rgb(15, 31, 44) 100%) ;/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -48,6 +52,8 @@ body{
   font-family: 'Lato', sans-serif;
 
   padding: 50px;
+
+  overflow-x: hidden;
 }
 
 .App {
@@ -128,37 +134,118 @@ body{
     -8px -8px 0 #280A5E
 }
 
-#discordIcon {
+
+#defineTitle {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+#defineTitle2 {
+  font-weight: 100;
+}
+#MakeAWhaleMainContent {
+  padding-left: 100px;
+}
+#HeaderV2 {
+  padding-bottom: 100px;
+  background-image: url('http://localhost:3000/BGelement.svg');
+  background-repeat: no-repeat;
+  background-position: 0 90%;
+  background-size: 50%;
+}
+
+#HeaderV2_left {
+  padding-left: 150px;
+}
+
+#navigation {
   position: fixed;
-  top: 0px;
-  right: 0px;
-  padding: 25px;
+  left: 0;
+  top: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;  
+  height: 95%;
+  z-index: 2;
+  justify-content: flex-end;
+}
+
+#navigationBackground {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 100%;
+  background-color: #ffffff; 
+  opacity: .1;
+  padding: 20px;
+  z-index: 1;
+}
+
+#MakeAWhaleLogo {
   width: 50px;
+}
+#mainIcon {
+  top: 0;
+  position: absolute;
+  width: 40px;
   opacity: 80%;
   z-index: 99;
 }
 
-#twitterIcon {
-  position: fixed;
-  top: 100px;
-  right: 0px;
-  padding: 25px;
-  width: 50px;
-  opacity: 80%;
-  z-index: 99;
+#mainCTA {
+  width: 25vw;
+  margin-bottom: 50px;
+  margin-left: -10px;
+}
+
+hr {
+  width: 75%;
+  opacity: .5;
+}
+
+.whaleImage {
+  position: absolute;
+  right: -30vw;
+  top: -20%;
+  width: 70vw;
+}
+
+#textBoxRow {
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+.textBlockContainer {
+  min-height: 300px;
+  padding: 35px 25px;
+  
+} 
+
+.textBlock {
+   background: rgba(255, 255, 255, 0.1);
+   min-height: 80%;
+   padding: 35px 25px;
+   border-top: solid 2px #02f4f5;
+}
+.description {
+  font-size: 1rem;
+}
+
+
+.nomatterwhat {
+  padding: 5px; 
+  margin-top: 7%;
+  font-size: 1.3rem;
+  background-image: linear-gradient(to right, rgba(255,255,255,.1), rgba(255, 255, 255, 0));
 
 }
 
-#instagramIcon {
-  position: fixed;
-  top: 200px;
-  right: 0px;
-  padding: 25px;
-  width: 50px;
-  opacity: 80%;
+.icon {
+  margin-top: 20px;
+  opacity: 60%;
   z-index: 99;
-
 }
+
 
 
 #discordIcon:hover {
@@ -173,30 +260,32 @@ body{
 
 
 .SubMainHeader {
-  margin-top: 25px;
-  margin-bottom: 0px;
-  text-align: left;
   font-size: 2rem;
   font-weight: bold;
   color: white;
- 
+  opacity: 1;
+  line-height: 2rem;
+  margin-bottom: 10px;
 }
 .MainDefinition {
   margin-top: 5px;
   margin-bottom: 10px;
   text-align: left;
-  font-size: 2rem;
+  font-size: 1.3rem;
   font-weight: 300;
   color: white;
+  opacity: .5;
+  width: 70%;
+  letter-spacing: 5px;
 }
 
 .InspiredBy {
-  margin-top: 5px;
+  margin-top: 25px;
   margin-bottom: 10px;
   text-align: left;
   font-size: 1.5rem;
-  font-weight: 100;
-  color: white;
+  font-weight: 400;
+  color: #02F4F5;
 }
 
 blockquote {
@@ -206,16 +295,14 @@ blockquote {
 
 }
 
-.description {
-  margin-bottom: 100px;
-}
+
 
 /* Lottery Timer */
 
 #MakeAWhaleContainer {
   background-color: #3D334F;
   padding: 10px;
-  border-radius: 20px;
+  border-radius: 0;
   margin-bottom: 100px;
   text-align: center;
 
@@ -261,7 +348,7 @@ blockquote {
   background-color: rgb(15, 31, 44);
   padding: 20px;
   padding-bottom: 30px;
-  border-radius: 20px;
+  border-radius: 0;
 
 }
 
@@ -275,7 +362,7 @@ blockquote {
   width: 100%;
   background-color: rgb(15, 31, 44);
   padding: 20px;
-  border-radius: 20px;
+  border-radius: 0;
 }
 
 /* Enter Lottery Button */
@@ -286,7 +373,7 @@ blockquote {
 
 #EnterButton {
   font-size: 1rem;
-  border-radius: 20px;
+  border-radius: 0;
   margin: 10px 0 10px 0;
   padding: 15px;
   background-color: #6825E6;
@@ -303,7 +390,7 @@ blockquote {
 /* Meta Mask BUttom */
 #MetaMaskButton {
   font-size: 1rem;
-  border-radius: 20px;
+  border-radius: 0;
   margin: 10px 0 10px 0;
   padding: 15px;
   background-color: #c9c9c9;
@@ -330,8 +417,8 @@ blockquote {
 
 #CheckVaultButton {
   font-size: 1rem;
-  border-radius: 20px;
-  margin: 10px 10px 10px 0;
+  border-radius: 0;
+  margin: 10px 0 10px 0;
   padding: 15px;
   background-color: #6825E6;
   border: none;
@@ -341,7 +428,7 @@ blockquote {
 
 #WithdrawWinnings {
   font-size: 1rem;
-  border-radius: 20px;
+  border-radius: 0;
   margin: 10px 0 10px 10px;
   padding: 15px;
   background-color: #6825E6;
@@ -361,7 +448,7 @@ blockquote {
   width: 100%;
   background-color: rgb(15, 31, 44);
   padding: 20px;
-  border-radius: 20px;
+  border-radius: 0;
 }
 
 
@@ -406,7 +493,7 @@ td, th {
   border: 2px solid #000;
   box-shadow: 24;
   padding: 50px;
-  border-radius: 20px;
+  border-radius: 0;
   text-align: center;
   color: white;
 
@@ -432,13 +519,13 @@ li {
   padding: 20px;
   padding-bottom: 20px;
   padding-bottom: 30px;
-  border-radius: 20px;
+  border-radius: 0;
 }
 
 #NoWeb3Item {
   background-color: #3D334F;
   padding: 10px;
-  border-radius: 20px;
+  border-radius: 0;
   margin-bottom: 100px;
   text-align: center;
 }
@@ -449,6 +536,14 @@ li {
 
 
 /* Footer Styles */
+#footer {
+  background-image: url('http://localhost:3000/BGelement.svg');
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+  background-size: 50%;
+  padding-top: 50px;
+}
+
 .disclaimer {
   font-size: .8rem;
   text-align: center;
@@ -493,11 +588,7 @@ li {
   opacity: 100%;
 }
 
-.whaleImage {
-  position: absolute;
-  right: 0;
-  width: 800px;
-}
+
 
 /* Mobile Stylings */
 @media screen and (max-width: 800px) {
@@ -527,7 +618,7 @@ li {
   }
 
   .description {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 
   .EntrantsTableContainer {
