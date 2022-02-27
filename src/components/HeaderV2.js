@@ -49,7 +49,7 @@ class HeaderV2 extends Component {
                             
                            
                         </Grid>
-                        <Grid item xs={12} md={3} >
+                        <Grid id="MakeAWhaleImageContainer" item xs={12} md={3} >
                              <img src="/MakeAWhaleArtwork.png" className="whaleImage"></img>
                         </Grid>
                 </Grid>

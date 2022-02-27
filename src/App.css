@@ -633,10 +633,15 @@ li {
     padding-left: 0;
   }
 
+  #MakeAWhaleImageContainer {
+    position: relative;
+    overflow: hidden;
+  }
+
   .whaleImage {
-    right: -60vw;
-    top: 460px;
-    width: 160vw;
+    right: -46vw;
+    top: -1250px;
+    width: 140vw;
   }
 
   #textBoxRow {
