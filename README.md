@@ -11,7 +11,7 @@
 </h4>
 
 
-![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif)
+![screenshot](https://makeawhale.io/MakeAWhaleArtwork.png)
 
 ## What is this application used for? 
 
