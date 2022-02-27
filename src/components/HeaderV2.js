@@ -27,7 +27,7 @@ class HeaderV2 extends Component {
                             <h2 id="defineTitle" > DEFINITION<span id="defineTitle2"> {'>  >  >'}  WHALE </span></h2>
                             <hr/> 
                             <p className="MainDefinition "> someone who amasses a large portion of an existing asset while remaining anonymous. </p>
-                            <h2 className="InspiredBy "> Inspired by : <a href="https://www.reddit.com/r/millionairemakers/"> millionairemakers ( reddit ) </a></h2>
+                            <h2 className="InspiredBy" target="_blank"> Inspired by : <a href="https://www.reddit.com/r/millionairemakers/"> millionairemakers ( reddit ) </a></h2>
                             <blockquote>"If a million people gave a dollar to someone, they could be a millionaire."</blockquote>
                             <Grid container item id="textBoxRow" spacing={4}>
                                 <Grid item className="textBlockContainer" sm={12} md={12}  lg={6}>

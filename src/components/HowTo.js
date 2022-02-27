@@ -20,8 +20,8 @@ export class HowTo extends Component {
         </ol>
         <h2> More info: </h2>
         <ul>
-            <li> 10% will go to the contract for further dev, giveaways and more. </li>
-
+            <li> 15% of each pot will go to the contract for future dev, giveaways and more. </li>
+            <li> Have feedback? Reach out in discord.  </li>
         </ul>
         </div>
       </Grid>
