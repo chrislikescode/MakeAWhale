@@ -11,17 +11,17 @@ export class HowTo extends Component {
         <div>
         <h2> How To: </h2>
         <ol>
-            <li> Install MetaMask and fill it with ETH </li>
-            <li> Enter to make or become a whale !  Make a whale has to be running )  </li>
-            <li> When block count reaches 0 and make a whale ends, click "check if I won button" ( light will be red ) </li>
-            <li> If you won you will be able to click "withdraw funds" to receive your winnings </li>
+            <li> Click "MAKE A WHALE". This is you entering. </li>
+            <li> Once the block countdown is over, a entrant will be randomly selected.  </li>
+            <li> Once ended ( off ) click "CHECK IF I WON" </li>
+            <li> If you won you will be able to click "withdraw funds" to receive your winnings. </li>
 
 
         </ol>
         <h2> More info: </h2>
         <ul>
             <li> 15% of each pot will go to the contract for future dev, giveaways and more. </li>
-            <li> Have feedback? Reach out in discord.  </li>
+            <li> Have feedback? Reach out in discord or twitter.  </li>
         </ul>
         </div>
       </Grid>

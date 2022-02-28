@@ -29,7 +29,7 @@ export class EntrantsTable extends Component {
             /* Add listener to update table when new entrant */
             this._listenernewentrant = this.whale.events.NewEntrant({fromBlock: "latest" }).on('data', event => this.handleNewEntrant(event));
 
-            /* Add listener to clear table when lotteyr ends */
+            /* Add listener to clear table when  end */
             this._listenernewwinner = this.whale.events.NewWhale().on('data', event => this.handleWhaleEnd(event));
 
         } catch (err) {
@@ -53,7 +53,7 @@ export class EntrantsTable extends Component {
     handleNewEntrant = async(event) => {
         let newEntrant = this.web3.eth.abi.decodeParameter('address',event.raw.topics[1]);
         if(this.state.currentEntrants.length > 0){ 
-            let _joined = this.state.currentEntrants.concat(newEntrant);
+            let _joined = this.state.currentEntrants.concat([newEntrant]);
             // only show last 10 entrants
             if(_joined.length > 10){
                 _joined.shift();

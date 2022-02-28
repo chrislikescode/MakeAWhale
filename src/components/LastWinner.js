@@ -12,7 +12,6 @@ export class LastWinner extends Component {
         super(props);
         this.whale = props.whale;
         this.web3 = props.web3;
-        this._listenerwinner = null;
     }
 
 
@@ -30,7 +29,6 @@ export class LastWinner extends Component {
     }
 
     getLastWinner = async () => {
-
         const _lastwinner = await this.whale.getPastEvents("NewWhale" ,{ fromBlock: "earliest"});
         this.setState({lastWinner: _lastwinner[_lastwinner.length - 1 ]['returnValues'][0]});
     }
