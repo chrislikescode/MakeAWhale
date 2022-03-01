@@ -47,7 +47,7 @@ html {
 
 body{ 
   background: rgb(4,20,71);
-  background: linear-gradient(90deg, rgba(4,20,71,1) 0%, rgba(8,1,26,1) 35%, rgba(34,12,71,1) 100%); 
+  background: linear-gradient(350deg, rgba(4,20,71,1) 0%, rgba(8,1,26,1) 35%, rgba(34,12,71,1) 100%); 
  
   vertical-align: middle;
 
