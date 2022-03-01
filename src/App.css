@@ -32,6 +32,7 @@ li{
 h1, h2, h3, li{
   font-family: 'Red Hat Display', sans-serif;
   color: white;
+  letter-spacing: 5px;
 
 }
 
@@ -202,7 +203,7 @@ body{
 }
 
 hr {
-  width: 75%;
+  width: 96%;
   opacity: .5;
 }
 
@@ -262,7 +263,7 @@ hr {
 
 
 .SubMainHeader {
-  font-size: 2rem;
+  font-size: 150%;
   font-weight: bold;
   color: white;
   opacity: 1;
@@ -273,11 +274,11 @@ hr {
   margin-top: 5px;
   margin-bottom: 10px;
   text-align: left;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 300;
   color: white;
   opacity: .5;
-  width: 70%;
+  width: 75%;
   letter-spacing: 5px;
 }
 
@@ -462,6 +463,10 @@ blockquote {
   justify-content: center;
   flex-direction: column;
 
+}
+
+.EntrantsTableDiv {
+  z-index: 99;
 }
 
 .EntrantsTable {

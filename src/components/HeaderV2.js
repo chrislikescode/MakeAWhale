@@ -22,7 +22,7 @@ class HeaderV2 extends Component {
                 </div>
                 
                 <Grid container id="HeaderV2" spacing={4}>
-                        <Grid item  xs={12} md={9} id="HeaderV2_left">
+                        <Grid item  xs={12} md={8} id="HeaderV2_left">
                             <img src="/MainCTA.png" id="mainCTA"></img>
                             <h2 id="defineTitle" > DEFINITION<span id="defineTitle2"> {'>  >  >'}  WHALE </span></h2>
                             <hr/> 
@@ -49,7 +49,7 @@ class HeaderV2 extends Component {
                             
                            
                         </Grid>
-                        <Grid id="MakeAWhaleImageContainer" item xs={12} md={3} >
+                        <Grid id="MakeAWhaleImageContainer" item xs={12} md={4} >
                              <img src="/MakeAWhaleArtwork.png" className="whaleImage"></img>
                         </Grid>
                 </Grid>
