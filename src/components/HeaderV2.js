@@ -2,7 +2,7 @@ import Grid from '@mui/material/Grid/';
 import React, { Component } from "react";
 import {FaDiscord} from '@react-icons/all-files/fa/FaDiscord';
 import {FaTwitter} from '@react-icons/all-files/fa/FaTwitter';
-import {FaInstagram} from '@react-icons/all-files/fa/FaInstagram';
+import {FaEthereum} from '@react-icons/all-files/fa/FaEthereum';
 
 import {IconContext} from '@react-icons/all-files/';
 
@@ -13,9 +13,9 @@ class HeaderV2 extends Component {
                 <div id="navigation">    
                 <IconContext.Provider value={{color: "#ffffff", size: "40px" }}>
                     <span id="mainIcon"> <img src="/WhaleLogo.png" id="MakeAWhaleLogo"></img></span>
+                    <span id="ethIcon" className="icon"><a href="https://ethereum.org/en/" target="_blank" rel="noopener noreferrer"><FaEthereum/></a></span>
                     <span id="discordIcon" className="icon"><a href="https://discord.gg/b7y93Jxw" target="_blank"  rel="noopener noreferrer"><FaDiscord/></a></span>
                     <span id="twitterIcon" className="icon"><a href="https://twitter.com/poseidonsnonce" target="_blank"  rel="noopener noreferrer"><FaTwitter/></a></span>
-                    <span id="instagramIcon" className="icon"><a href="https://www.instagram.com/makeawhale/" target="_blank"  rel="noopener noreferrer"><FaInstagram/></a></span>
                 </IconContext.Provider>
                 </div>
                 <div id="navigationBackground">
