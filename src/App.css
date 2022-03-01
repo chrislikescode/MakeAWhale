@@ -46,8 +46,8 @@ html {
 }
 
 body{ 
-  background: rgb(34,12,71);
-  background: linear-gradient(350deg, rgba(34,12,71,1) 0%, rgba(8,1,26,1) 47%, rgba(4,20,71,1) 100%);   background: radial-gradient(circle, hsla(262, 76%, 6%, 1) 0%, rgb(15, 31, 44) 100%) ;/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: rgb(4,20,71);
+  background: linear-gradient(90deg, rgba(4,20,71,1) 0%, rgba(8,1,26,1) 35%, rgba(34,12,71,1) 100%); 
  
   vertical-align: middle;
 
