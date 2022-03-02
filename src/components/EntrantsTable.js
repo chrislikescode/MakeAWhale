@@ -11,8 +11,8 @@ export class EntrantsTable extends Component {
     constructor(props) {
         super(props);
         this.web3 = props.web3;
-        this.accounts = props.accounts;
         this.whale = props.whale;
+        this.running = props.running;
         this._listenernewentrant = null;
         this._listenernewwinner = null;
     };
@@ -21,8 +21,7 @@ export class EntrantsTable extends Component {
         try {
             /* Get Current Entrants and set state */
 
-            let running = await this.whale.methods.running().call();
-            if(running) {
+            if(this.running) {
                 this.getCurrentEntrants();
             }
 
@@ -44,14 +43,16 @@ export class EntrantsTable extends Component {
 
     getCurrentEntrants = async () => {
         const _currentEntrants = await this.whale.methods.getEntrantsArray(10, 0).call();
+
         if(_currentEntrants != null){
-            this.setState({currentEntrants: _currentEntrants});
+            this.setState({currentEntrants: _currentEntrants.slice(0).reverse()});
         }
     }
 
     
     handleNewEntrant = async(event) => {
         let newEntrant = this.web3.eth.abi.decodeParameter('address',event.raw.topics[1]);
+        console.log(newEntrant);
         if(this.state.currentEntrants.length > 0){ 
             let _joined = this.state.currentEntrants.concat([newEntrant]);
             // only show last 10 entrants

@@ -55,6 +55,8 @@ export class VaultButtons extends Component {
         try {
             const account = await this.web3.eth.getAccounts();
             await this.winnervault.methods.withdraw(account[0]).send({from: account[0]});
+            this.setState({open: false});
+
         } catch (err){
             console.error(err);
         }

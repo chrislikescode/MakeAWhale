@@ -44,7 +44,7 @@ class App extends Component {
       const makeawhalenetwork = MakeAWhaleContract.networks[networkId];
       const _makeawhalecontract = new _web3.eth.Contract( MakeAWhaleContract.abi, makeawhalenetwork.address);
       const winnervaultnetwork = WinnerVault.networks[networkId];
-      const _winnervault = new _web3.eth.Contract( WinnerVault.abi, '0xf4EC32019CdE48b08f649A52730D701d9fC56662');
+      const _winnervault = new _web3.eth.Contract( WinnerVault.abi, '0xc5C05190d405dAeaC7d2641Cc1546Ab97439d0c8');
 
 
       // can only check if MakeAWahel is running if we have an account to call from
@@ -132,17 +132,17 @@ class App extends Component {
         <Grid id="MakeAWhaleMainContent"container spacing={2} direction="row-reverse">
         
           <EntrantsTable 
-          whale={this.state.WhaleContract}
-          web3={this.state.web3}
+            whale={this.state.WhaleContract}
+            web3={this.state.web3}
             running={this.state.running}
             />
         
           <MakeAWhale
-          whale={this.state.WhaleContract} 
-          web3={this.state.web3} 
-          running={this.state.running}
-          mmConnected={this.state.mmConnected}
-          winnervault={this.state.WinnerVault}
+            whale={this.state.WhaleContract} 
+            web3={this.state.web3} 
+            running={this.state.running}
+            mmConnected={this.state.mmConnected}
+            winnervault={this.state.WinnerVault}
           />
         
           <HowTo/>

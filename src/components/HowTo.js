@@ -22,6 +22,8 @@ export class HowTo extends Component {
         <ul>
             <li> 15% of each pot will go to the contract for future dev, giveaways and more. </li>
             <li> Have feedback? Reach out in discord or twitter.  </li>
+            <li> The Solidity contract is linked in the navigation on the left.   </li>
+
         </ul>
         </div>
       </Grid>

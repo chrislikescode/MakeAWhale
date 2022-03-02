@@ -361,6 +361,10 @@ blockquote {
 
 }
 
+.lastwinneraddress {
+  letter-spacing: 1px;
+}
+
 
 /* Make A Whale Stats Stats */
 #MakeAWhaleStats {
@@ -728,4 +732,24 @@ li {
     font-size: 4rem;
   }
 
+}
+
+
+/* Super Wide Screen */
+@media screen and (min-width: 1900px) {
+  .whaleImage {
+    right: 10%;
+    width: 50vw;
+    max-width: 10000px;
+  }
+}
+
+
+@media screen and (min-width: 3500px) {
+  .whaleImage {
+    right: 47%;
+    width: 30vw;
+    max-width: 10010px;
+    top: -200px;
+  }
 }
