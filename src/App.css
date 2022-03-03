@@ -704,6 +704,9 @@ li {
     line-height: 1.2rem;
   }
 
+  #blocksleft {
+    font-size: 4rem;
+  }
 
   .nomatterwhat {
     font-size: 1rem;

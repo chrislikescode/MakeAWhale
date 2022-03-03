@@ -124,7 +124,7 @@ class Timer extends Component {
                 <div id="MakeAWhaleTimerHeader">
                     <div id="MakeAWhaleTimerLight" className={this.state.lightClass}></div>
                     <h2 className="text_white med_text">blocks left</h2> 
-                    <h2 className="text_white big_big_text"> <span>{this.running ? this.state.blocksLeft :  this.state.emoji} </span> </h2> 
+                    <h2 className="text_white big_big_text"  id="blocksleft" > <span>{this.running ? this.state.blocksLeft :  this.state.emoji} </span> </h2> 
                     <h2 className="text_white small_text"> {this.running ? this.secondsToHms(this.state.blocksLeft * 15) : ''}</h2> 
                     <h3 className="text_white small_text">{this.state.statusMessage} {this.running  ? this.state.endBlock : "" }</h3> 
                     <h3 className="text_white small_text">Current block: {this.state.currentBlock} </h3> 
