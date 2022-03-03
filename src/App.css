@@ -617,6 +617,10 @@ li {
     padding: 0;
   }
 
+    .noweb3_text {
+      font-size: 1.2rem;
+      letter-spacing: 3px;    
+    }
   #navigationBackground {
     height: 20px;
     width: 100%;
