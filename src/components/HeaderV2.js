@@ -13,7 +13,7 @@ class HeaderV2 extends Component {
                 <div id="navigation">    
                 <IconContext.Provider value={{color: "#ffffff", size: "40px" }}>
                     <span id="mainIcon"> <img src="/WhaleLogo.png" id="MakeAWhaleLogo"></img></span>
-                    <span id="ethIcon" className="icon"><a href="https://ethereum.org/en/" target="_blank" rel="noopener noreferrer"><FaEthereum/></a></span>
+                    <span id="ethIcon" className="icon"><a href="https://etherscan.io/address/0x6b74332e2ef30e2e052d24734cfc8b484eab4c39#code" target="_blank" rel="noopener noreferrer"><FaEthereum/></a></span>
                     <span id="discordIcon" className="icon"><a href="https://discord.gg/b7y93Jxw" target="_blank"  rel="noopener noreferrer"><FaDiscord/></a></span>
                     <span id="twitterIcon" className="icon"><a href="https://twitter.com/poseidonsnonce" target="_blank"  rel="noopener noreferrer"><FaTwitter/></a></span>
                 </IconContext.Provider>
