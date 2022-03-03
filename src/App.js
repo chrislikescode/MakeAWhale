@@ -41,10 +41,13 @@ class App extends Component {
 
     if(_web3 !== null){
       const networkId = await _web3.eth.net.getId();
-      const makeawhalenetwork = MakeAWhaleContract.networks[networkId];
-      const _makeawhalecontract = new _web3.eth.Contract( MakeAWhaleContract.abi, makeawhalenetwork.address);
-      const winnervaultnetwork = WinnerVault.networks[networkId];
-      const _winnervault = new _web3.eth.Contract( WinnerVault.abi, '0x61257A1A9f2af36d4Ce72885AdBC01194628A603');
+      if(networkId == 1){
+        const makeawhalenetwork = MakeAWhaleContract.networks[networkId];
+        const _makeawhalecontract = new _web3.eth.Contract( MakeAWhaleContract.abi, makeawhalenetwork.address);
+        const winnervaultnetwork = WinnerVault.networks[networkId];
+        const _winnervault = new _web3.eth.Contract( WinnerVault.abi, '0x61257A1A9f2af36d4Ce72885AdBC01194628A603');
+      
+     
 
 
       // can only check if MakeAWahel is running if we have an account to call from
@@ -59,7 +62,9 @@ class App extends Component {
         WhaleContract: _makeawhalecontract, 
         WinnerVault: _winnervault,
         running: _runninglot
-        }, this.postStateCallback);  
+        }, this.postStateCallback); 
+        
+      } 
     } else {
       console.log("No web3 available, need to install MM");
     }

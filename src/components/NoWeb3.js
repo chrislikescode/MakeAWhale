@@ -25,6 +25,8 @@ export class NoWeb3 extends Component {
                     <div id="NoWeb3Div" className="flex"> 
                         <h2 className="text_white big_text noweb3_tex noweb3_greeting">Welcome to Make a Whale!<span role="img" aria-label="whale" className="noweb3_emoji"> 🐋 </span> </h2> 
                         <h2 className="text_white med_text noweb3_text">You will need a web3 enabled browser to use this app! Our recomendation, install the MetaMask extension.</h2> 
+                        <h2 className="text_white med_text noweb3_text">This dAPP is also only available on Ethereum Mainnet. So if you're not there, make sure you switch. </h2> 
+
                         <Button variant="contained" id="MetaMaskDownload" onClick={this.downloadMetamask}>Download MetaMask</Button>
                     </div>
                 </Grid>
