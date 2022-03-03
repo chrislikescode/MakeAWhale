@@ -99,6 +99,7 @@ body{
 .small_text {
   font-size: 1rem;
   font-weight: 400;
+  letter-spacing: 2px;
 }
 
 .med_text {

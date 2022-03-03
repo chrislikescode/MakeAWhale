@@ -20,6 +20,7 @@ class Timer extends Component {
         this.blockInterval = null;
         this.lightClass = "off";
         this._listenernewwinner = null;
+        this.mmConnected = this.props.mmConnected;
     }
 
 
@@ -53,6 +54,10 @@ class Timer extends Component {
         } else {
             _lightClass = "off";
             _statusMessage = "Make a Whale not running";
+        }
+
+        if(!this.mmConnected){
+            _statusMessage = "Connect to Metamask to see active stats!"
         }
 
          /* Set state to re-render */

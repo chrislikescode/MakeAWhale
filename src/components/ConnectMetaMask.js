@@ -35,6 +35,7 @@ export class ConnectMetaMask extends Component {
             localStorage.setItem('mm', 1);
             this.mmConnected = 1;
             this.setState({showButton: this.mmConnected});
+            window.location.reload(false);
         }catch(err){
             console.error(err);
         }
