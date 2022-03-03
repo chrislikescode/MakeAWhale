@@ -746,7 +746,7 @@ li {
 /* Super Wide Screen */
 @media screen and (min-width: 1900px) {
   .whaleImage {
-    right: 10%;
+    right: 0;
     width: 50vw;
     max-width: 10000px;
   }
