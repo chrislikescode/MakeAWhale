@@ -19,4 +19,7 @@
 * Enter Make a Whale
 * Check if you we're chosen to be a "New Whale" 
 * Withdraw winnings from the MakeAWhale vault. 
-
+* 
+<h2 align="center">
+  <a href="https://etherscan.io/address/0x6b74332e2ef30e2e052d24734cfc8b484eab4c39#code">Solidity Smart Contract  </a>
+</h2>
